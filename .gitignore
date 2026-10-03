@@ -1,0 +1,47 @@
+# Virtual environment
+.venv/
+env/
+venv/
+ENV/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# IDE files
+.vscode/
+.idea/
+
+# Local checkpoints & logs
+.ipynb_checkpoints/
+
+# Editor swap files
+*.swp
+*.swo
+
+# Quantizer intermediates: ~133 MB each and regenerable from the .pt weights
+# via quantize_vitis_AB4.py / dpu_silu_experiment.py --quant_mode test.
+# The small metadata beside them (quant_info.json, the generated wrapper) is kept,
+# and the *compiled* xmodels in compiled*/ are committed as the deployable artefact.
+yolov3_test/quantize_result/YOLOv3DPUWrapper_int.xmodel
+yolov3_test/quantize_result_lrelu/YOLOv3DPUWrapper_int.xmodel
+yolov3_test/quantize_result_silu_decomp/YOLOv3DPUWrapper_int.xmodel
+yolov3_test/quantize_result_orig/YOLOv3DPUWrapper_int.xmodel
+yolov3_test/board_results/*.json
+
+# val.py's COCO predictions dumps: 55 MB each and regenerable with --save-json.
+yolov3_test/runs/val/*/*_predictions.json
+
+# Files over 100 MB are not pushed to the Yolo_Implementation remote. Each one is listed, with
+# the command that recreates it, in Versal_YOLOv3_Vault/06 Environment/Files Not in Git.md
+Yolo_v8_Versal_Implementation/quantize_result/yolov8l_hardswish/YOLOv8DPUWrapper_int.xmodel
+Yolo_v8_Versal_Implementation/quantize_result/yolov8m_hardswish/YOLOv8DPUWrapper_int.xmodel
+yolov3_test/runs/train/exp2/weights/best.pt
+yolov3_test/runs/train/exp2/weights/last.pt
+yolov3_test/yolov3_original.pt

@@ -1,0 +1,8 @@
+{
+    "lib": "libvart-dpu-runner.so",
+    "filename": "yolov3_vck190_lrelu.xmodel",
+    "kernel": [
+        "subgraph_YOLOv3DPUWrapper__YOLOv3DPUWrapper_Bottleneck_layers__ModuleList_11__Conv_cv1__Conv2d_conv__ret_165"
+    ],
+    "target": "DPUCVDX8G_ISA3_C32B6"
+}

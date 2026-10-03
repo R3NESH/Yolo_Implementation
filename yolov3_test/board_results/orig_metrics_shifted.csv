@@ -1,0 +1,9 @@
+Metric,Value
+mAP@0.50,0.468100
+mAP@0.50:0.95,0.286900
+mAP@0.75,0.306100
+Recall (AR@100),0.415100
+Predictions,362111
+Images,5000
+Classes,79
+Note,"class indices remapped +1 (yolov3_original.pt has no 'person' class)"

@@ -1,0 +1,7 @@
+Metric,Value
+mAP@0.50,0.029867
+mAP@0.50:0.95,0.016753
+mAP@0.75,0.017085
+Recall (AR@100),0.283552
+Predictions,362551
+Images,5000

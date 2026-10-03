@@ -1,0 +1,8 @@
+{
+    "lib": "libvart-dpu-runner.so",
+    "filename": "yolov8l_hardswish_vck190.xmodel",
+    "kernel": [
+        "subgraph_YOLOv8DPUWrapper__YOLOv8DPUWrapper_C2f_layers__ModuleList_12__Bottleneck_m__ModuleList_0__Conv_cv1__Conv2d_conv__ret_405"
+    ],
+    "target": "DPUCVDX8G_ISA3_C32B6"
+}

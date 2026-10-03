@@ -1,0 +1,42 @@
+XAIEFAL: INFO: Resource group Avail is created.
+XAIEFAL: INFO: Resource group Static is created.
+XAIEFAL: INFO: Resource group Generic is created.
+model has 73 DPU subgraph(s); using the 'graph' runner
+input (6, 416, 416, 3) (NHWC)  outputs [(6, 52, 52, 255), (6, 26, 26, 255), (6, 13, 13, 255)]
+input fix_point scale 64, output scales [1.0, 1.0, 1.0], batch 6 (all slots used)
+loading annotations into memory...
+Done (t=4.37s)
+creating index...
+index created!
+images processed: 5000 | detections kept: 362551
+predictions -> orig_preds.json
+Loading and preparing results...
+DONE (t=7.62s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *bbox*
+DONE (t=158.48s).
+Accumulating evaluation results...
+DONE (t=56.93s).
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.017
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.030
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.017
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.010
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.023
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.033
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.155
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.273
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.284
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.116
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.306
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.453
+--------------------------------------------
+ mAP@0.50       : 0.0299
+ mAP@0.50:0.95  : 0.0168
+ mAP@0.75       : 0.0171
+ Recall (AR@100): 0.2836
+--------------------------------------------
+ PC float baseline for comparison: mAP@0.5 0.5275 / mAP@0.5:0.95 0.3228
+ (from runs/train/exp2 - see the vault note 'Training Run exp2')
+metrics -> orig_metrics.csv

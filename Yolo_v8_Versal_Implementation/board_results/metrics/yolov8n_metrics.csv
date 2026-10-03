@@ -1,0 +1,50 @@
+parameter,value,unit,source
+model,yolov8n,,read from the .pt checkpoint
+board,"VCK190, DPUCVDX8G_ISA3_C32B6, batch 6, 333 MHz, VART 3.0.0",,fixed
+configuration,"INT8, HardSwish, letterbox, 640x640, conf 0.001, IoU 0.45, max_det 300",,fixed
+fps,14.38,images/s,"measured: wall clock, end-to-end incl. preprocess+DPU+decode+NMS"
+fps_dpu_only,22.16,images/s,"measured: board_eval --benchmark, back-to-back inferences, excludes host decode+NMS"
+latency_per_image,69.54,ms,derived from the rows above
+runtime_5000_images,347,s,"measured: wall clock, end-to-end incl. preprocess+DPU+decode+NMS"
+power_idle,13.02,W,"measured: host_vck190/measure_power.py, 17 INA226 rails via /sys/class/hwmon, sustained load (400 back-to-back inferences), 0.5 s sampling"
+power_under_load,13.70,W,"measured: host_vck190/measure_power.py, 17 INA226 rails via /sys/class/hwmon, sustained load (400 back-to-back inferences), 0.5 s sampling"
+power_attributable,0.69,W,"load minus idle; measured: host_vck190/measure_power.py, 17 INA226 rails via /sys/class/hwmon, sustained load (400 back-to-back inferences), 0.5 s sampling"
+energy_per_image,0.953,J/image,"derived: power_under_load / fps, using the CLEAN fps from the scored run - sampling 17 I2C rails perturbs throughput, so the rate observed during sampling is not the rate to divide by"
+energy_per_image_attributable,0.048,J/image,power_attributable / fps; excludes the board's static draw
+efficiency,1.05,images/s/W,fps / power_under_load
+mAP@0.5,0.445271,,"measured: board_eval_vck190.py + pycocotools, val2017 5000 images"
+mAP@0.5:0.95,0.291348,,"measured: board_eval_vck190.py + pycocotools, val2017 5000 images"
+mAP@0.75,0.307229,,"measured: board_eval_vck190.py + pycocotools, val2017 5000 images"
+AR@100,0.494916,,"measured: board_eval_vck190.py + pycocotools, val2017 5000 images"
+mAP@0.5_independent_scorer,0.4430,,"measured: tools/board_curves.py (own IoU matcher, no pycocotools)"
+float_mAP@0.5,0.5187,,Versal_AI/benchmarks/pytorch_results.csv (PC float baseline)
+float_mAP@0.5:0.95,0.3681,,Versal_AI/benchmarks/pytorch_results.csv (PC float baseline)
+accuracy_retained@0.5,85.8,%,derived from the rows above
+accuracy_retained@0.5:0.95,79.1,%,derived from the rows above
+precision,0.5889,,"measured: tools/extract_pr_f1.py at the best-F1 confidence, IoU 0.5"
+recall,0.4123,,"measured: tools/extract_pr_f1.py at the best-F1 confidence, IoU 0.5"
+f1_score,0.4682,,"measured: tools/extract_pr_f1.py at the best-F1 confidence, IoU 0.5"
+operating_confidence,0.269,,"measured: tools/extract_pr_f1.py at the best-F1 confidence, IoU 0.5"
+detections_total,794255,count,"measured: board_eval_vck190.py + pycocotools, val2017 5000 images"
+parameters,3.16,M,read from the .pt checkpoint
+xmodel_size,3.39,MiB,read from compiled xmodel: xir DPU subgraph attributes
+ddr_weights,3.01,MiB,read from compiled xmodel: xir DPU subgraph attributes
+ddr_activations,11.10,MiB,read from compiled xmodel: xir DPU subgraph attributes
+ddr_input_buffer,1.17,MiB,read from compiled xmodel: xir DPU subgraph attributes
+ddr_output_buffer,1.15,MiB,read from compiled xmodel: xir DPU subgraph attributes
+ddr_total,16.43,MiB,derived from the rows above
+microcode_size,145.5,KiB,read from compiled xmodel: xir DPU subgraph attributes
+workload,8.764,GOP/image,read from compiled xmodel: xir DPU subgraph attributes
+workload_on_arch,10.031,GOP/image,read from compiled xmodel: xir DPU subgraph attributes
+dpu_array_efficiency,87.4,%,derived from the rows above
+achieved_compute,126.0,GOP/s,derived from the rows above
+conv_modules,57,count,read from the .pt checkpoint
+dpu_ops,244,count,read from compiled xmodel: xir DPU subgraph attributes
+dpu_subgraphs,1,count,read from compiled xmodel: xir DPU subgraph attributes
+cpu_ops,fix2float x3,,read from compiled xmodel: xir DPU subgraph attributes
+fpga_area_LUT,NOT_APPLICABLE_PER_MODEL,count,"Model footprint, not FPGA area. FPGA utilisation (LUT/FF/BRAM/URAM/DSP) belongs to the DPU bitstream, not the model: all four share one DPUCVDX8G_ISA3_C32B6 build (identical dpu_fingerprint), so it does not vary per model, and the figures live in a Vivado report this prebuilt platform does not ship."
+fpga_area_FF,NOT_APPLICABLE_PER_MODEL,count,"Model footprint, not FPGA area. FPGA utilisation (LUT/FF/BRAM/URAM/DSP) belongs to the DPU bitstream, not the model: all four share one DPUCVDX8G_ISA3_C32B6 build (identical dpu_fingerprint), so it does not vary per model, and the figures live in a Vivado report this prebuilt platform does not ship."
+fpga_area_BRAM,NOT_APPLICABLE_PER_MODEL,count,"Model footprint, not FPGA area. FPGA utilisation (LUT/FF/BRAM/URAM/DSP) belongs to the DPU bitstream, not the model: all four share one DPUCVDX8G_ISA3_C32B6 build (identical dpu_fingerprint), so it does not vary per model, and the figures live in a Vivado report this prebuilt platform does not ship."
+fpga_area_URAM,NOT_APPLICABLE_PER_MODEL,count,"Model footprint, not FPGA area. FPGA utilisation (LUT/FF/BRAM/URAM/DSP) belongs to the DPU bitstream, not the model: all four share one DPUCVDX8G_ISA3_C32B6 build (identical dpu_fingerprint), so it does not vary per model, and the figures live in a Vivado report this prebuilt platform does not ship."
+fpga_area_DSP,NOT_APPLICABLE_PER_MODEL,count,"Model footprint, not FPGA area. FPGA utilisation (LUT/FF/BRAM/URAM/DSP) belongs to the DPU bitstream, not the model: all four share one DPUCVDX8G_ISA3_C32B6 build (identical dpu_fingerprint), so it does not vary per model, and the figures live in a Vivado report this prebuilt platform does not ship."
+dpu_fingerprint,433190037845252193,,identical across all four models - one DPU build serves them all

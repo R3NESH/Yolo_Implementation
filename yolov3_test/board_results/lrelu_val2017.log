@@ -1,0 +1,44 @@
+XAIEFAL: INFO: Resource group Avail is created.
+XAIEFAL: INFO: Resource group Static is created.
+XAIEFAL: INFO: Resource group Generic is created.
+input (6, 416, 416, 3) (NHWC)  outputs [(6, 52, 52, 255), (6, 26, 26, 255), (6, 13, 13, 255)]
+input fix_point scale 64, output scales [0.125, 0.125, 0.125], DPU batch 6 (using 1)
+loading annotations into memory...
+Done (t=2.21s)
+creating index...
+index created!
+
+
+images processed: 5000 | detections kept: 1500000
+predictions -> lrelu_preds.json
+Loading and preparing results...
+DONE (t=31.30s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *bbox*
+DONE (t=283.04s).
+Accumulating evaluation results...
+DONE (t=78.05s).
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.019
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.059
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.006
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.006
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.024
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.030
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.040
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.084
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.100
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.047
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.128
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.117
+
+--------------------------------------------
+ mAP@0.50       : 0.0591
+ mAP@0.50:0.95  : 0.0188
+ mAP@0.75       : 0.0062
+ Recall (AR@100): 0.1003
+--------------------------------------------
+ PC float baseline for comparison: mAP@0.5 0.5275 / mAP@0.5:0.95 0.3228
+ (from runs/train/exp2 - see the vault note 'Training Run exp2')
+metrics -> lrelu_metrics.csv

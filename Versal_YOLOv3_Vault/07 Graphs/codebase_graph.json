@@ -1,0 +1,2645 @@
+{
+  "modules": {
+    "inspect_common_AB2": {
+      "loc": 26,
+      "doc": "",
+      "classes": [],
+      "functions": [],
+      "internal_imports": [
+        "models"
+      ],
+      "external_imports": [
+        "inspect"
+      ],
+      "error": null,
+      "path": "inspect_common_AB2.py"
+    },
+    "val": {
+      "loc": 631,
+      "doc": "Validate a trained YOLOv3 detection model on a detection dataset.",
+      "classes": [],
+      "functions": [
+        "save_one_txt",
+        "save_one_json",
+        "process_batch",
+        "run",
+        "parse_opt",
+        "main"
+      ],
+      "internal_imports": [
+        "models.common",
+        "utils.callbacks",
+        "utils.dataloaders",
+        "utils.general",
+        "utils.metrics",
+        "utils.plots",
+        "utils.torch_utils"
+      ],
+      "external_imports": [
+        "argparse",
+        "json",
+        "numpy",
+        "os",
+        "pathlib",
+        "pycocotools",
+        "subprocess",
+        "sys",
+        "torch",
+        "tqdm"
+      ],
+      "error": null,
+      "path": "val.py"
+    },
+    "train": {
+      "loc": 1477,
+      "doc": "Train a YOLOv3 model on a custom dataset. Models and datasets download automatically from the Ultralytics release.",
+      "classes": [],
+      "functions": [
+        "train",
+        "parse_opt",
+        "main",
+        "run"
+      ],
+      "internal_imports": [
+        "models.experimental",
+        "models.yolo",
+        "utils.autoanchor",
+        "utils.autobatch",
+        "utils.callbacks",
+        "utils.dataloaders",
+        "utils.downloads",
+        "utils.general",
+        "utils.loggers",
+        "utils.loggers.comet.comet_utils",
+        "utils.loss",
+        "utils.metrics",
+        "utils.plots",
+        "utils.torch_utils",
+        "val"
+      ],
+      "external_imports": [
+        "argparse",
+        "comet_ml",
+        "copy",
+        "datetime",
+        "math",
+        "numpy",
+        "os",
+        "pathlib",
+        "random",
+        "subprocess",
+        "sys",
+        "time",
+        "torch",
+        "tqdm",
+        "ultralytics",
+        "yaml"
+      ],
+      "error": null,
+      "path": "train.py"
+    },
+    "dpu_silu_experiment": {
+      "loc": 118,
+      "doc": "Experiment: does replacing SiLU with LeakyReLU defragment the DPU subgraph?",
+      "classes": [],
+      "functions": [
+        "swap_silu",
+        "run"
+      ],
+      "internal_imports": [
+        "export_dpu_wrapper_AB3",
+        "quantize_vitis_AB4"
+      ],
+      "external_imports": [
+        "argparse",
+        "np2_pickle_compat",
+        "os",
+        "pytorch_nndct",
+        "sys",
+        "torch"
+      ],
+      "error": null,
+      "path": "dpu_silu_experiment.py"
+    },
+    "export": {
+      "loc": 1575,
+      "doc": "Export a YOLOv3 PyTorch model to other formats. TensorFlow exports authored by https://github.com/zldrobit.",
+      "classes": [
+        {
+          "name": "iOSModel",
+          "bases": [
+            "torch.nn.Module"
+          ]
+        }
+      ],
+      "functions": [
+        "export_formats",
+        "try_export",
+        "export_torchscript",
+        "export_onnx",
+        "export_openvino",
+        "export_paddle",
+        "export_coreml",
+        "export_engine",
+        "export_saved_model",
+        "export_pb",
+        "export_tflite",
+        "export_edgetpu",
+        "export_tfjs",
+        "add_tflite_metadata",
+        "pipeline_coreml",
+        "run",
+        "parse_opt",
+        "main"
+      ],
+      "internal_imports": [
+        "models.experimental",
+        "models.tf",
+        "models.yolo",
+        "utils.dataloaders",
+        "utils.general",
+        "utils.torch_utils"
+      ],
+      "external_imports": [
+        "PIL",
+        "argparse",
+        "contextlib",
+        "coremltools",
+        "json",
+        "nncf",
+        "numpy",
+        "onnx",
+        "onnxsim",
+        "openvino",
+        "os",
+        "pandas",
+        "pathlib",
+        "platform",
+        "re",
+        "subprocess",
+        "sys",
+        "tensorflow",
+        "tensorflowjs",
+        "tensorrt",
+        "tflite_support",
+        "time",
+        "torch",
+        "warnings",
+        "x2paddle"
+      ],
+      "error": null,
+      "path": "export.py"
+    },
+    "export_dpu_wrapper_AB3": {
+      "loc": 179,
+      "doc": "",
+      "classes": [
+        {
+          "name": "YOLOv3DPUWrapper",
+          "bases": [
+            "nn.Module"
+          ]
+        }
+      ],
+      "functions": [],
+      "internal_imports": [],
+      "external_imports": [
+        "np2_pickle_compat",
+        "os",
+        "torch"
+      ],
+      "error": null,
+      "path": "export_dpu_wrapper_AB3.py"
+    },
+    "inspect_model_AB1": {
+      "loc": 110,
+      "doc": "",
+      "classes": [],
+      "functions": [
+        "inspect_checkpoint"
+      ],
+      "internal_imports": [],
+      "external_imports": [
+        "numpy",
+        "sys",
+        "torch",
+        "yaml"
+      ],
+      "error": null,
+      "path": "inspect_model_AB1.py"
+    },
+    "quantize_vitis_AB4": {
+      "loc": 370,
+      "doc": "",
+      "classes": [],
+      "functions": [
+        "get_calibration_dataloader",
+        "run_quantization"
+      ],
+      "internal_imports": [
+        "export_dpu_wrapper_AB3"
+      ],
+      "external_imports": [
+        "PIL",
+        "argparse",
+        "np2_pickle_compat",
+        "os",
+        "pytorch_nndct",
+        "sys",
+        "torch",
+        "torchvision"
+      ],
+      "error": null,
+      "path": "quantize_vitis_AB4.py"
+    },
+    "vitis_compat.np2_pickle_compat": {
+      "loc": 42,
+      "doc": "Let NumPy-2.x-pickled checkpoints load under the Vitis AI image's NumPy 1.x.",
+      "classes": [],
+      "functions": [
+        "apply"
+      ],
+      "internal_imports": [],
+      "external_imports": [
+        "numpy",
+        "sys"
+      ],
+      "error": null,
+      "path": "vitis_compat/np2_pickle_compat.py"
+    },
+    "vitis_compat.ultralytics": {
+      "loc": 15,
+      "doc": "Minimal offline `ultralytics` shim for the Vitis AI Docker environment.",
+      "classes": [],
+      "functions": [],
+      "internal_imports": [],
+      "external_imports": [],
+      "error": null,
+      "path": "vitis_compat/ultralytics/__init__.py"
+    },
+    "vitis_compat.ultralytics.utils": {
+      "loc": 2,
+      "doc": "Stand-ins for the `ultralytics.utils` helpers this repo imports.",
+      "classes": [],
+      "functions": [],
+      "internal_imports": [],
+      "external_imports": [],
+      "error": null,
+      "path": "vitis_compat/ultralytics/utils/__init__.py"
+    },
+    "vitis_compat.ultralytics.utils.patches": {
+      "loc": 14,
+      "doc": "Minimal stand-in for `ultralytics.utils.patches`.",
+      "classes": [],
+      "functions": [
+        "torch_load"
+      ],
+      "internal_imports": [],
+      "external_imports": [
+        "torch"
+      ],
+      "error": null,
+      "path": "vitis_compat/ultralytics/utils/patches.py"
+    },
+    "vitis_compat.ultralytics.utils.plotting": {
+      "loc": 108,
+      "doc": "Minimal stand-in for `ultralytics.utils.plotting`.",
+      "classes": [
+        {
+          "name": "Colors",
+          "bases": []
+        },
+        {
+          "name": "Annotator",
+          "bases": []
+        }
+      ],
+      "functions": [
+        "save_one_box"
+      ],
+      "internal_imports": [],
+      "external_imports": [
+        "PIL",
+        "cv2",
+        "numpy",
+        "pathlib",
+        "torch"
+      ],
+      "error": null,
+      "path": "vitis_compat/ultralytics/utils/plotting.py"
+    },
+    "vitis_compat.ultralytics.utils.checks": {
+      "loc": 7,
+      "doc": "Minimal stand-in for `ultralytics.utils.checks`.",
+      "classes": [],
+      "functions": [
+        "check_requirements"
+      ],
+      "internal_imports": [],
+      "external_imports": [],
+      "error": null,
+      "path": "vitis_compat/ultralytics/utils/checks.py"
+    },
+    "vitis_compat.ultralytics.utils.torch_utils": {
+      "loc": 14,
+      "doc": "Minimal stand-in for `ultralytics.utils.torch_utils`.",
+      "classes": [],
+      "functions": [
+        "autocast"
+      ],
+      "internal_imports": [],
+      "external_imports": [
+        "torch"
+      ],
+      "error": null,
+      "path": "vitis_compat/ultralytics/utils/torch_utils.py"
+    },
+    "quantize_result.YOLOv3DPUWrapper": {
+      "loc": 272,
+      "doc": "",
+      "classes": [
+        {
+          "name": "YOLOv3DPUWrapper",
+          "bases": [
+            "py_nndct.nn.NndctQuantModel"
+          ]
+        }
+      ],
+      "functions": [],
+      "internal_imports": [],
+      "external_imports": [
+        "pytorch_nndct",
+        "torch"
+      ],
+      "error": null,
+      "path": "quantize_result/YOLOv3DPUWrapper.py"
+    },
+    "vitis_out.probe_init": {
+      "loc": 30,
+      "doc": "Scratch probe: find which line of YOLOv3DPUWrapper.__init__ segfaults.",
+      "classes": [],
+      "functions": [],
+      "internal_imports": [
+        "export_dpu_wrapper_AB3"
+      ],
+      "external_imports": [
+        "sys",
+        "torch"
+      ],
+      "error": null,
+      "path": "vitis_out/probe_init.py"
+    },
+    "models.experimental": {
+      "loc": 134,
+      "doc": "Experimental modules.",
+      "classes": [
+        {
+          "name": "Sum",
+          "bases": [
+            "nn.Module"
+          ]
+        },
+        {
+          "name": "MixConv2d",
+          "bases": [
+            "nn.Module"
+          ]
+        },
+        {
+          "name": "Ensemble",
+          "bases": [
+            "nn.ModuleList"
+          ]
+        }
+      ],
+      "functions": [
+        "attempt_load"
+      ],
+      "internal_imports": [
+        "models.yolo",
+        "utils.downloads"
+      ],
+      "external_imports": [
+        "math",
+        "numpy",
+        "torch",
+        "ultralytics"
+      ],
+      "error": null,
+      "path": "models/experimental.py"
+    },
+    "models": {
+      "loc": 2,
+      "doc": "",
+      "classes": [],
+      "functions": [],
+      "internal_imports": [],
+      "external_imports": [],
+      "error": null,
+      "path": "models/__init__.py"
+    },
+    "models.common_orig": {
+      "loc": 1078,
+      "doc": "Common modules.",
+      "classes": [
+        {
+          "name": "Conv",
+          "bases": [
+            "nn.Module"
+          ]
+        },
+        {
+          "name": "DWConv",
+          "bases": [
+            "Conv"
+          ]
+        },
+        {
+          "name": "DWConvTranspose2d",
+          "bases": [
+            "nn.ConvTranspose2d"
+          ]
+        },
+        {
+          "name": "TransformerLayer",
+          "bases": [
+            "nn.Module"
+          ]
+        },
+        {
+          "name": "TransformerBlock",
+          "bases": [
+            "nn.Module"
+          ]
+        },
+        {
+          "name": "Bottleneck",
+          "bases": [
+            "nn.Module"
+          ]
+        },
+        {
+          "name": "BottleneckCSP",
+          "bases": [
+            "nn.Module"
+          ]
+        },
+        {
+          "name": "CrossConv",
+          "bases": [
+            "nn.Module"
+          ]
+        },
+        {
+          "name": "C3",
+          "bases": [
+            "nn.Module"
+          ]
+        },
+        {
+          "name": "C3x",
+          "bases": [
+            "C3"
+          ]
+        },
+        {
+          "name": "C3TR",
+          "bases": [
+            "C3"
+          ]
+        },
+        {
+          "name": "C3SPP",
+          "bases": [
+            "C3"
+          ]
+        },
+        {
+          "name": "C3Ghost",
+          "bases": [
+            "C3"
+          ]
+        },
+        {
+          "name": "SPP",
+          "bases": [
+            "nn.Module"
+          ]
+        },
+        {
+          "name": "SPPF",
+          "bases": [
+            "nn.Module"
+          ]
+        },
+        {
+          "name": "Focus",
+          "bases": [
+            "nn.Module"
+          ]
+        },
+        {
+          "name": "GhostConv",
+          "bases": [
+            "nn.Module"
+          ]
+        },
+        {
+          "name": "GhostBottleneck",
+          "bases": [
+            "nn.Module"
+          ]
+        },
+        {
+          "name": "Contract",
+          "bases": [
+            "nn.Module"
+          ]
+        },
+        {
+          "name": "Expand",
+          "bases": [
+            "nn.Module"
+          ]
+        },
+        {
+          "name": "Concat",
+          "bases": [
+            "nn.Module"
+          ]
+        },
+        {
+          "name": "DetectMultiBackend",
+          "bases": [
+            "nn.Module"
+          ]
+        },
+        {
+          "name": "AutoShape",
+          "bases": [
+            "nn.Module"
+          ]
+        },
+        {
+          "name": "Detections",
+          "bases": []
+        },
+        {
+          "name": "Proto",
+          "bases": [
+            "nn.Module"
+          ]
+        },
+        {
+          "name": "Classify",
+          "bases": [
+            "nn.Module"
+          ]
+        }
+      ],
+      "functions": [
+        "autopad"
+      ],
+      "internal_imports": [
+        "export",
+        "models.experimental",
+        "utils",
+        "utils.dataloaders",
+        "utils.downloads",
+        "utils.general",
+        "utils.torch_utils",
+        "utils.triton"
+      ],
+      "external_imports": [
+        "IPython",
+        "PIL",
+        "ast",
+        "collections",
+        "contextlib",
+        "copy",
+        "coremltools",
+        "cv2",
+        "json",
+        "math",
+        "numpy",
+        "onnxruntime",
+        "openvino",
+        "paddle",
+        "pandas",
+        "pathlib",
+        "platform",
+        "requests",
+        "tensorflow",
+        "tensorrt",
+        "tflite_runtime",
+        "torch",
+        "ultralytics",
+        "urllib",
+        "warnings",
+        "zipfile"
+      ],
+      "error": null,
+      "path": "models/common_orig.py"
+    },
+    "models.common": {
+      "loc": 1122,
+      "doc": "Common modules.",
+      "classes": [
+        {
+          "name": "Conv",
+          "bases": [
+            "nn.Module"
+          ]
+        },
+        {
+          "name": "DWConv",
+          "bases": [
+            "Conv"
+          ]
+        },
+        {
+          "name": "DWConvTranspose2d",
+          "bases": [
+            "nn.ConvTranspose2d"
+          ]
+        },
+        {
+          "name": "TransformerLayer",
+          "bases": [
+            "nn.Module"
+          ]
+        },
+        {
+          "name": "TransformerBlock",
+          "bases": [
+            "nn.Module"
+          ]
+        },
+        {
+          "name": "Bottleneck",
+          "bases": [
+            "nn.Module"
+          ]
+        },
+        {
+          "name": "Bottleneck_merged",
+          "bases": [
+            "nn.Module"
+          ]
+        },
+        {
+          "name": "BottleneckCSP",
+          "bases": [
+            "nn.Module"
+          ]
+        },
+        {
+          "name": "CrossConv",
+          "bases": [
+            "nn.Module"
+          ]
+        },
+        {
+          "name": "C3",
+          "bases": [
+            "nn.Module"
+          ]
+        },
+        {
+          "name": "C3x",
+          "bases": [
+            "C3"
+          ]
+        },
+        {
+          "name": "C3TR",
+          "bases": [
+            "C3"
+          ]
+        },
+        {
+          "name": "C3SPP",
+          "bases": [
+            "C3"
+          ]
+        },
+        {
+          "name": "C3Ghost",
+          "bases": [
+            "C3"
+          ]
+        },
+        {
+          "name": "SPP",
+          "bases": [
+            "nn.Module"
+          ]
+        },
+        {
+          "name": "SPPF",
+          "bases": [
+            "nn.Module"
+          ]
+        },
+        {
+          "name": "Focus",
+          "bases": [
+            "nn.Module"
+          ]
+        },
+        {
+          "name": "GhostConv",
+          "bases": [
+            "nn.Module"
+          ]
+        },
+        {
+          "name": "GhostBottleneck",
+          "bases": [
+            "nn.Module"
+          ]
+        },
+        {
+          "name": "Contract",
+          "bases": [
+            "nn.Module"
+          ]
+        },
+        {
+          "name": "Expand",
+          "bases": [
+            "nn.Module"
+          ]
+        },
+        {
+          "name": "Concat",
+          "bases": [
+            "nn.Module"
+          ]
+        },
+        {
+          "name": "DetectMultiBackend",
+          "bases": [
+            "nn.Module"
+          ]
+        },
+        {
+          "name": "AutoShape",
+          "bases": [
+            "nn.Module"
+          ]
+        },
+        {
+          "name": "Detections",
+          "bases": []
+        },
+        {
+          "name": "Proto",
+          "bases": [
+            "nn.Module"
+          ]
+        },
+        {
+          "name": "Classify",
+          "bases": [
+            "nn.Module"
+          ]
+        }
+      ],
+      "functions": [
+        "autopad"
+      ],
+      "internal_imports": [
+        "export",
+        "models.experimental",
+        "utils",
+        "utils.dataloaders",
+        "utils.downloads",
+        "utils.general",
+        "utils.torch_utils",
+        "utils.triton"
+      ],
+      "external_imports": [
+        "IPython",
+        "PIL",
+        "ast",
+        "collections",
+        "contextlib",
+        "copy",
+        "coremltools",
+        "cv2",
+        "json",
+        "math",
+        "numpy",
+        "onnxruntime",
+        "openvino",
+        "paddle",
+        "pandas",
+        "pathlib",
+        "platform",
+        "requests",
+        "tensorflow",
+        "tensorrt",
+        "tflite_runtime",
+        "torch",
+        "ultralytics",
+        "urllib",
+        "warnings",
+        "zipfile"
+      ],
+      "error": null,
+      "path": "models/common.py"
+    },
+    "models.yolo": {
+      "loc": 460,
+      "doc": "YOLO-specific modules.",
+      "classes": [
+        {
+          "name": "Detect",
+          "bases": [
+            "nn.Module"
+          ]
+        },
+        {
+          "name": "Segment",
+          "bases": [
+            "Detect"
+          ]
+        },
+        {
+          "name": "BaseModel",
+          "bases": [
+            "nn.Module"
+          ]
+        },
+        {
+          "name": "DetectionModel",
+          "bases": [
+            "BaseModel"
+          ]
+        },
+        {
+          "name": "SegmentationModel",
+          "bases": [
+            "DetectionModel"
+          ]
+        },
+        {
+          "name": "ClassificationModel",
+          "bases": [
+            "BaseModel"
+          ]
+        }
+      ],
+      "functions": [
+        "parse_model"
+      ],
+      "internal_imports": [
+        "models.common",
+        "models.experimental",
+        "utils.autoanchor",
+        "utils.general",
+        "utils.plots",
+        "utils.torch_utils"
+      ],
+      "external_imports": [
+        "argparse",
+        "copy",
+        "os",
+        "pathlib",
+        "platform",
+        "sys",
+        "thop",
+        "yaml"
+      ],
+      "error": null,
+      "path": "models/yolo.py"
+    },
+    "models.tf": {
+      "loc": 751,
+      "doc": "TensorFlow, Keras and TFLite versions of YOLOv3",
+      "classes": [
+        {
+          "name": "TFBN",
+          "bases": [
+            "keras.layers.Layer"
+          ]
+        },
+        {
+          "name": "TFPad",
+          "bases": [
+            "keras.layers.Layer"
+          ]
+        },
+        {
+          "name": "TFConv",
+          "bases": [
+            "keras.layers.Layer"
+          ]
+        },
+        {
+          "name": "TFDWConv",
+          "bases": [
+            "keras.layers.Layer"
+          ]
+        },
+        {
+          "name": "TFDWConvTranspose2d",
+          "bases": [
+            "keras.layers.Layer"
+          ]
+        },
+        {
+          "name": "TFFocus",
+          "bases": [
+            "keras.layers.Layer"
+          ]
+        },
+        {
+          "name": "TFBottleneck",
+          "bases": [
+            "keras.layers.Layer"
+          ]
+        },
+        {
+          "name": "TFCrossConv",
+          "bases": [
+            "keras.layers.Layer"
+          ]
+        },
+        {
+          "name": "TFConv2d",
+          "bases": [
+            "keras.layers.Layer"
+          ]
+        },
+        {
+          "name": "TFBottleneckCSP",
+          "bases": [
+            "keras.layers.Layer"
+          ]
+        },
+        {
+          "name": "TFC3",
+          "bases": [
+            "keras.layers.Layer"
+          ]
+        },
+        {
+          "name": "TFC3x",
+          "bases": [
+            "keras.layers.Layer"
+          ]
+        },
+        {
+          "name": "TFSPP",
+          "bases": [
+            "keras.layers.Layer"
+          ]
+        },
+        {
+          "name": "TFSPPF",
+          "bases": [
+            "keras.layers.Layer"
+          ]
+        },
+        {
+          "name": "TFDetect",
+          "bases": [
+            "keras.layers.Layer"
+          ]
+        },
+        {
+          "name": "TFSegment",
+          "bases": [
+            "TFDetect"
+          ]
+        },
+        {
+          "name": "TFProto",
+          "bases": [
+            "keras.layers.Layer"
+          ]
+        },
+        {
+          "name": "TFUpsample",
+          "bases": [
+            "keras.layers.Layer"
+          ]
+        },
+        {
+          "name": "TFConcat",
+          "bases": [
+            "keras.layers.Layer"
+          ]
+        },
+        {
+          "name": "TFModel",
+          "bases": []
+        },
+        {
+          "name": "AgnosticNMS",
+          "bases": [
+            "keras.layers.Layer"
+          ]
+        }
+      ],
+      "functions": [
+        "parse_model",
+        "activations",
+        "representative_dataset_gen",
+        "run",
+        "parse_opt",
+        "main"
+      ],
+      "internal_imports": [
+        "models.common",
+        "models.experimental",
+        "models.yolo",
+        "utils.activations",
+        "utils.general"
+      ],
+      "external_imports": [
+        "argparse",
+        "copy",
+        "numpy",
+        "pathlib",
+        "sys",
+        "tensorflow",
+        "torch",
+        "yaml"
+      ],
+      "error": null,
+      "path": "models/tf.py"
+    },
+    "quantize_result_lrelu.YOLOv3DPUWrapper": {
+      "loc": 272,
+      "doc": "",
+      "classes": [
+        {
+          "name": "YOLOv3DPUWrapper",
+          "bases": [
+            "py_nndct.nn.NndctQuantModel"
+          ]
+        }
+      ],
+      "functions": [],
+      "internal_imports": [],
+      "external_imports": [
+        "pytorch_nndct",
+        "torch"
+      ],
+      "error": null,
+      "path": "quantize_result_lrelu/YOLOv3DPUWrapper.py"
+    },
+    "utils.callbacks": {
+      "loc": 73,
+      "doc": "Callback utils.",
+      "classes": [
+        {
+          "name": "Callbacks",
+          "bases": []
+        }
+      ],
+      "functions": [],
+      "internal_imports": [],
+      "external_imports": [
+        "threading"
+      ],
+      "error": null,
+      "path": "utils/callbacks.py"
+    },
+    "utils.autoanchor": {
+      "loc": 178,
+      "doc": "AutoAnchor utils.",
+      "classes": [],
+      "functions": [
+        "check_anchor_order",
+        "check_anchors",
+        "kmean_anchors"
+      ],
+      "internal_imports": [
+        "utils",
+        "utils.dataloaders",
+        "utils.general"
+      ],
+      "external_imports": [
+        "numpy",
+        "random",
+        "scipy",
+        "torch",
+        "tqdm",
+        "yaml"
+      ],
+      "error": null,
+      "path": "utils/autoanchor.py"
+    },
+    "utils.loss": {
+      "loc": 257,
+      "doc": "Loss functions.",
+      "classes": [
+        {
+          "name": "BCEBlurWithLogitsLoss",
+          "bases": [
+            "nn.Module"
+          ]
+        },
+        {
+          "name": "FocalLoss",
+          "bases": [
+            "nn.Module"
+          ]
+        },
+        {
+          "name": "QFocalLoss",
+          "bases": [
+            "nn.Module"
+          ]
+        },
+        {
+          "name": "ComputeLoss",
+          "bases": []
+        }
+      ],
+      "functions": [
+        "smooth_BCE"
+      ],
+      "internal_imports": [
+        "utils.metrics",
+        "utils.torch_utils"
+      ],
+      "external_imports": [
+        "torch"
+      ],
+      "error": null,
+      "path": "utils/loss.py"
+    },
+    "utils": {
+      "loc": 106,
+      "doc": "utils/initialization.",
+      "classes": [
+        {
+          "name": "TryExcept",
+          "bases": [
+            "contextlib.ContextDecorator"
+          ]
+        }
+      ],
+      "functions": [
+        "emojis",
+        "threaded",
+        "join_threads",
+        "notebook_init"
+      ],
+      "internal_imports": [
+        "utils.general",
+        "utils.torch_utils"
+      ],
+      "external_imports": [
+        "IPython",
+        "contextlib",
+        "os",
+        "platform",
+        "psutil",
+        "shutil",
+        "threading",
+        "ultralytics"
+      ],
+      "error": null,
+      "path": "utils/__init__.py"
+    },
+    "utils.general": {
+      "loc": 1289,
+      "doc": "General utils.",
+      "classes": [
+        {
+          "name": "Profile",
+          "bases": [
+            "contextlib.ContextDecorator"
+          ]
+        },
+        {
+          "name": "Timeout",
+          "bases": [
+            "contextlib.ContextDecorator"
+          ]
+        },
+        {
+          "name": "WorkingDirectory",
+          "bases": [
+            "contextlib.ContextDecorator"
+          ]
+        }
+      ],
+      "functions": [
+        "is_ascii",
+        "is_chinese",
+        "is_colab",
+        "is_jupyter",
+        "is_kaggle",
+        "is_docker",
+        "is_writeable",
+        "set_logging",
+        "user_config_dir",
+        "methods",
+        "print_args",
+        "init_seeds",
+        "intersect_dicts",
+        "get_default_args",
+        "get_latest_run",
+        "file_age",
+        "file_date",
+        "file_size",
+        "check_online",
+        "git_describe",
+        "check_git_status",
+        "check_git_info",
+        "check_python",
+        "check_version",
+        "check_img_size",
+        "check_imshow",
+        "check_suffix",
+        "check_yaml",
+        "check_file",
+        "check_font",
+        "check_dataset",
+        "check_amp",
+        "yaml_load",
+        "yaml_save",
+        "unzip_file",
+        "url2file",
+        "download",
+        "make_divisible",
+        "clean_str",
+        "one_cycle",
+        "colorstr",
+        "labels_to_class_weights",
+        "labels_to_image_weights",
+        "coco80_to_coco91_class",
+        "xyxy2xywh",
+        "xywh2xyxy",
+        "xywhn2xyxy",
+        "xyxy2xywhn",
+        "xyn2xy",
+        "segment2box",
+        "segments2boxes",
+        "resample_segments",
+        "scale_boxes",
+        "scale_segments",
+        "clip_boxes",
+        "clip_segments",
+        "non_max_suppression",
+        "strip_optimizer",
+        "print_mutation",
+        "apply_classifier",
+        "increment_path",
+        "imread",
+        "imwrite",
+        "imshow"
+      ],
+      "internal_imports": [
+        "models.common",
+        "utils",
+        "utils.downloads",
+        "utils.metrics"
+      ],
+      "external_imports": [
+        "IPython",
+        "contextlib",
+        "copy",
+        "cv2",
+        "datetime",
+        "git",
+        "glob",
+        "inspect",
+        "itertools",
+        "logging",
+        "math",
+        "multiprocessing",
+        "numpy",
+        "os",
+        "pandas",
+        "pathlib",
+        "pkg_resources",
+        "platform",
+        "random",
+        "re",
+        "signal",
+        "socket",
+        "subprocess",
+        "sys",
+        "tarfile",
+        "time",
+        "torch",
+        "torchvision",
+        "typing",
+        "ultralytics",
+        "urllib",
+        "yaml",
+        "zipfile"
+      ],
+      "error": null,
+      "path": "utils/general.py"
+    },
+    "utils.autobatch": {
+      "loc": 73,
+      "doc": "Auto-batch utils.",
+      "classes": [],
+      "functions": [
+        "check_train_batch_size",
+        "autobatch"
+      ],
+      "internal_imports": [
+        "utils.general",
+        "utils.torch_utils"
+      ],
+      "external_imports": [
+        "copy",
+        "numpy",
+        "torch"
+      ],
+      "error": null,
+      "path": "utils/autobatch.py"
+    },
+    "utils.triton": {
+      "loc": 93,
+      "doc": "Utils to interact with the Triton Inference Server.",
+      "classes": [
+        {
+          "name": "TritonRemoteModel",
+          "bases": []
+        }
+      ],
+      "functions": [],
+      "internal_imports": [],
+      "external_imports": [
+        "torch",
+        "tritonclient",
+        "typing",
+        "urllib"
+      ],
+      "error": null,
+      "path": "utils/triton.py"
+    },
+    "utils.augmentations": {
+      "loc": 419,
+      "doc": "Image augmentation functions.",
+      "classes": [
+        {
+          "name": "Albumentations",
+          "bases": []
+        },
+        {
+          "name": "LetterBox",
+          "bases": []
+        },
+        {
+          "name": "CenterCrop",
+          "bases": []
+        },
+        {
+          "name": "ToTensor",
+          "bases": []
+        }
+      ],
+      "functions": [
+        "normalize",
+        "denormalize",
+        "augment_hsv",
+        "hist_equalize",
+        "replicate",
+        "letterbox",
+        "random_perspective",
+        "copy_paste",
+        "cutout",
+        "mixup",
+        "box_candidates",
+        "classify_albumentations",
+        "classify_transforms"
+      ],
+      "internal_imports": [
+        "utils.general",
+        "utils.metrics"
+      ],
+      "external_imports": [
+        "albumentations",
+        "cv2",
+        "math",
+        "numpy",
+        "random",
+        "torch",
+        "torchvision"
+      ],
+      "error": null,
+      "path": "utils/augmentations.py"
+    },
+    "utils.dataloaders": {
+      "loc": 1330,
+      "doc": "Dataloaders and dataset utils.",
+      "classes": [
+        {
+          "name": "InfiniteDataLoader",
+          "bases": [
+            "dataloader.DataLoader"
+          ]
+        },
+        {
+          "name": "_RepeatSampler",
+          "bases": []
+        },
+        {
+          "name": "LoadScreenshots",
+          "bases": []
+        },
+        {
+          "name": "LoadImages",
+          "bases": []
+        },
+        {
+          "name": "LoadStreams",
+          "bases": []
+        },
+        {
+          "name": "LoadImagesAndLabels",
+          "bases": [
+            "Dataset"
+          ]
+        },
+        {
+          "name": "HUBDatasetStats",
+          "bases": []
+        },
+        {
+          "name": "ClassificationDataset",
+          "bases": [
+            "torchvision.datasets.ImageFolder"
+          ]
+        }
+      ],
+      "functions": [
+        "get_hash",
+        "exif_size",
+        "exif_transpose",
+        "seed_worker",
+        "create_dataloader",
+        "img2label_paths",
+        "flatten_recursive",
+        "extract_boxes",
+        "autosplit",
+        "verify_image_label",
+        "create_classification_dataloader"
+      ],
+      "internal_imports": [
+        "utils.augmentations",
+        "utils.general",
+        "utils.torch_utils"
+      ],
+      "external_imports": [
+        "PIL",
+        "contextlib",
+        "glob",
+        "hashlib",
+        "itertools",
+        "json",
+        "math",
+        "mss",
+        "multiprocessing",
+        "numpy",
+        "os",
+        "pafy",
+        "pathlib",
+        "psutil",
+        "random",
+        "shutil",
+        "threading",
+        "time",
+        "torch",
+        "torchvision",
+        "tqdm",
+        "urllib",
+        "yaml"
+      ],
+      "error": null,
+      "path": "utils/dataloaders.py"
+    },
+    "utils.metrics": {
+      "loc": 376,
+      "doc": "Model validation metrics.",
+      "classes": [
+        {
+          "name": "ConfusionMatrix",
+          "bases": []
+        }
+      ],
+      "functions": [
+        "fitness",
+        "smooth",
+        "ap_per_class",
+        "compute_ap",
+        "bbox_iou",
+        "box_iou",
+        "bbox_ioa",
+        "wh_iou",
+        "plot_pr_curve",
+        "plot_mc_curve"
+      ],
+      "internal_imports": [
+        "utils"
+      ],
+      "external_imports": [
+        "math",
+        "matplotlib",
+        "numpy",
+        "pathlib",
+        "seaborn",
+        "torch",
+        "warnings"
+      ],
+      "error": null,
+      "path": "utils/metrics.py"
+    },
+    "utils.activations": {
+      "loc": 139,
+      "doc": "Activation functions.",
+      "classes": [
+        {
+          "name": "SiLU",
+          "bases": [
+            "nn.Module"
+          ]
+        },
+        {
+          "name": "Hardswish",
+          "bases": [
+            "nn.Module"
+          ]
+        },
+        {
+          "name": "Mish",
+          "bases": [
+            "nn.Module"
+          ]
+        },
+        {
+          "name": "MemoryEfficientMish",
+          "bases": [
+            "nn.Module"
+          ]
+        },
+        {
+          "name": "FReLU",
+          "bases": [
+            "nn.Module"
+          ]
+        },
+        {
+          "name": "AconC",
+          "bases": [
+            "nn.Module"
+          ]
+        },
+        {
+          "name": "MetaAconC",
+          "bases": [
+            "nn.Module"
+          ]
+        }
+      ],
+      "functions": [],
+      "internal_imports": [],
+      "external_imports": [
+        "torch"
+      ],
+      "error": null,
+      "path": "utils/activations.py"
+    },
+    "utils.plots": {
+      "loc": 486,
+      "doc": "Plotting utils.",
+      "classes": [
+        {
+          "name": "Colors",
+          "bases": []
+        }
+      ],
+      "functions": [
+        "feature_visualization",
+        "hist2d",
+        "butter_lowpass_filtfilt",
+        "output_to_target",
+        "plot_images",
+        "plot_lr_scheduler",
+        "plot_val_txt",
+        "plot_targets_txt",
+        "plot_val_study",
+        "plot_labels",
+        "imshow_cls",
+        "plot_evolve",
+        "plot_results",
+        "profile_idetection",
+        "save_one_box"
+      ],
+      "internal_imports": [
+        "utils",
+        "utils.augmentations",
+        "utils.general",
+        "utils.metrics"
+      ],
+      "external_imports": [
+        "PIL",
+        "contextlib",
+        "copy",
+        "cv2",
+        "math",
+        "matplotlib",
+        "numpy",
+        "os",
+        "pandas",
+        "pathlib",
+        "scipy",
+        "seaborn",
+        "torch",
+        "ultralytics"
+      ],
+      "error": null,
+      "path": "utils/plots.py"
+    },
+    "utils.downloads": {
+      "loc": 129,
+      "doc": "Download utils.",
+      "classes": [],
+      "functions": [
+        "is_url",
+        "gsutil_getsize",
+        "url_getsize",
+        "curl_download",
+        "safe_download",
+        "attempt_download"
+      ],
+      "internal_imports": [
+        "utils.general"
+      ],
+      "external_imports": [
+        "logging",
+        "pathlib",
+        "requests",
+        "subprocess",
+        "torch",
+        "urllib"
+      ],
+      "error": null,
+      "path": "utils/downloads.py"
+    },
+    "utils.torch_utils": {
+      "loc": 485,
+      "doc": "PyTorch utils.",
+      "classes": [
+        {
+          "name": "EarlyStopping",
+          "bases": []
+        },
+        {
+          "name": "ModelEMA",
+          "bases": []
+        }
+      ],
+      "functions": [
+        "smart_inference_mode",
+        "smartCrossEntropyLoss",
+        "smart_DDP",
+        "reshape_classifier_output",
+        "torch_distributed_zero_first",
+        "device_count",
+        "select_device",
+        "time_sync",
+        "profile",
+        "is_parallel",
+        "de_parallel",
+        "initialize_weights",
+        "find_modules",
+        "sparsity",
+        "prune",
+        "fuse_conv_and_bn",
+        "model_info",
+        "scale_img",
+        "copy_attr",
+        "smart_optimizer",
+        "smart_hub_load",
+        "smart_resume"
+      ],
+      "internal_imports": [
+        "models.common",
+        "utils.general"
+      ],
+      "external_imports": [
+        "contextlib",
+        "copy",
+        "math",
+        "os",
+        "pathlib",
+        "platform",
+        "subprocess",
+        "thop",
+        "time",
+        "torch",
+        "warnings"
+      ],
+      "error": null,
+      "path": "utils/torch_utils.py"
+    },
+    "utils.segment.loss": {
+      "loc": 202,
+      "doc": "",
+      "classes": [
+        {
+          "name": "ComputeLoss",
+          "bases": []
+        }
+      ],
+      "functions": [],
+      "internal_imports": [
+        "utils.general",
+        "utils.loss",
+        "utils.metrics",
+        "utils.segment.general",
+        "utils.torch_utils"
+      ],
+      "external_imports": [
+        "torch"
+      ],
+      "error": null,
+      "path": "utils/segment/loss.py"
+    },
+    "utils.segment": {
+      "loc": 2,
+      "doc": "",
+      "classes": [],
+      "functions": [],
+      "internal_imports": [],
+      "external_imports": [],
+      "error": null,
+      "path": "utils/segment/__init__.py"
+    },
+    "utils.segment.general": {
+      "loc": 161,
+      "doc": "",
+      "classes": [],
+      "functions": [
+        "crop_mask",
+        "process_mask_upsample",
+        "process_mask",
+        "process_mask_native",
+        "scale_image",
+        "mask_iou",
+        "masks_iou",
+        "masks2segments"
+      ],
+      "internal_imports": [],
+      "external_imports": [
+        "cv2",
+        "numpy",
+        "torch"
+      ],
+      "error": null,
+      "path": "utils/segment/general.py"
+    },
+    "utils.segment.augmentations": {
+      "loc": 91,
+      "doc": "Image augmentation functions.",
+      "classes": [],
+      "functions": [
+        "mixup",
+        "random_perspective"
+      ],
+      "internal_imports": [
+        "utils.augmentations",
+        "utils.general"
+      ],
+      "external_imports": [
+        "cv2",
+        "math",
+        "numpy",
+        "random"
+      ],
+      "error": null,
+      "path": "utils/segment/augmentations.py"
+    },
+    "utils.segment.dataloaders": {
+      "loc": 363,
+      "doc": "Dataloaders.",
+      "classes": [
+        {
+          "name": "LoadImagesAndLabelsAndMasks",
+          "bases": [
+            "LoadImagesAndLabels"
+          ]
+        }
+      ],
+      "functions": [
+        "create_dataloader",
+        "polygon2mask",
+        "polygons2masks",
+        "polygons2masks_overlap"
+      ],
+      "internal_imports": [
+        "utils.augmentations",
+        "utils.dataloaders",
+        "utils.general",
+        "utils.segment.augmentations",
+        "utils.torch_utils"
+      ],
+      "external_imports": [
+        "cv2",
+        "numpy",
+        "os",
+        "random",
+        "torch"
+      ],
+      "error": null,
+      "path": "utils/segment/dataloaders.py"
+    },
+    "utils.segment.metrics": {
+      "loc": 222,
+      "doc": "Model validation metrics.",
+      "classes": [
+        {
+          "name": "Metric",
+          "bases": []
+        },
+        {
+          "name": "Metrics",
+          "bases": []
+        }
+      ],
+      "functions": [
+        "fitness",
+        "ap_per_class_box_and_mask"
+      ],
+      "internal_imports": [
+        "utils.metrics"
+      ],
+      "external_imports": [
+        "numpy"
+      ],
+      "error": null,
+      "path": "utils/segment/metrics.py"
+    },
+    "utils.segment.plots": {
+      "loc": 151,
+      "doc": "",
+      "classes": [],
+      "functions": [
+        "plot_images_and_masks",
+        "plot_results_with_masks"
+      ],
+      "internal_imports": [
+        "utils",
+        "utils.general",
+        "utils.plots"
+      ],
+      "external_imports": [
+        "contextlib",
+        "cv2",
+        "math",
+        "matplotlib",
+        "numpy",
+        "pandas",
+        "pathlib",
+        "torch"
+      ],
+      "error": null,
+      "path": "utils/segment/plots.py"
+    },
+    "utils.loggers": {
+      "loc": 440,
+      "doc": "Logging utils.",
+      "classes": [
+        {
+          "name": "Loggers",
+          "bases": []
+        },
+        {
+          "name": "GenericLogger",
+          "bases": []
+        }
+      ],
+      "functions": [
+        "log_tensorboard_graph",
+        "web_project_name"
+      ],
+      "internal_imports": [
+        "utils.general",
+        "utils.loggers.clearml.clearml_utils",
+        "utils.loggers.comet",
+        "utils.loggers.wandb.wandb_utils",
+        "utils.plots",
+        "utils.torch_utils"
+      ],
+      "external_imports": [
+        "clearml",
+        "comet_ml",
+        "os",
+        "pathlib",
+        "pkg_resources",
+        "torch",
+        "wandb",
+        "warnings"
+      ],
+      "error": null,
+      "path": "utils/loggers/__init__.py"
+    },
+    "utils.loggers.wandb": {
+      "loc": 2,
+      "doc": "",
+      "classes": [],
+      "functions": [],
+      "internal_imports": [],
+      "external_imports": [],
+      "error": null,
+      "path": "utils/loggers/wandb/__init__.py"
+    },
+    "utils.loggers.wandb.wandb_utils": {
+      "loc": 211,
+      "doc": "",
+      "classes": [
+        {
+          "name": "WandbLogger",
+          "bases": []
+        }
+      ],
+      "functions": [
+        "all_logging_disabled"
+      ],
+      "internal_imports": [
+        "utils.general"
+      ],
+      "external_imports": [
+        "contextlib",
+        "logging",
+        "os",
+        "pathlib",
+        "sys",
+        "wandb"
+      ],
+      "error": null,
+      "path": "utils/loggers/wandb/wandb_utils.py"
+    },
+    "utils.loggers.comet.hpo": {
+      "loc": 127,
+      "doc": "",
+      "classes": [],
+      "functions": [
+        "get_args",
+        "run"
+      ],
+      "internal_imports": [
+        "train",
+        "utils.callbacks",
+        "utils.general",
+        "utils.torch_utils"
+      ],
+      "external_imports": [
+        "argparse",
+        "comet_ml",
+        "json",
+        "logging",
+        "os",
+        "pathlib",
+        "sys"
+      ],
+      "error": null,
+      "path": "utils/loggers/comet/hpo.py"
+    },
+    "utils.loggers.comet": {
+      "loc": 556,
+      "doc": "",
+      "classes": [
+        {
+          "name": "CometLogger",
+          "bases": []
+        }
+      ],
+      "functions": [],
+      "internal_imports": [
+        "utils.dataloaders",
+        "utils.general",
+        "utils.metrics"
+      ],
+      "external_imports": [
+        "PIL",
+        "comet_ml",
+        "glob",
+        "json",
+        "logging",
+        "os",
+        "pathlib",
+        "sys",
+        "torch",
+        "torchvision",
+        "yaml"
+      ],
+      "error": null,
+      "path": "utils/loggers/comet/__init__.py"
+    },
+    "utils.loggers.comet.comet_utils": {
+      "loc": 152,
+      "doc": "",
+      "classes": [],
+      "functions": [
+        "download_model_checkpoint",
+        "set_opt_parameters",
+        "check_comet_weights",
+        "check_comet_resume"
+      ],
+      "internal_imports": [],
+      "external_imports": [
+        "comet_ml",
+        "logging",
+        "os",
+        "urllib",
+        "yaml"
+      ],
+      "error": null,
+      "path": "utils/loggers/comet/comet_utils.py"
+    },
+    "utils.loggers.clearml.hpo": {
+      "loc": 91,
+      "doc": "",
+      "classes": [],
+      "functions": [],
+      "internal_imports": [],
+      "external_imports": [
+        "clearml"
+      ],
+      "error": null,
+      "path": "utils/loggers/clearml/hpo.py"
+    },
+    "utils.loggers.clearml": {
+      "loc": 2,
+      "doc": "",
+      "classes": [],
+      "functions": [],
+      "internal_imports": [],
+      "external_imports": [],
+      "error": null,
+      "path": "utils/loggers/clearml/__init__.py"
+    },
+    "utils.loggers.clearml.clearml_utils": {
+      "loc": 175,
+      "doc": "Main Logger class for ClearML experiment tracking.",
+      "classes": [
+        {
+          "name": "ClearmlLogger",
+          "bases": []
+        }
+      ],
+      "functions": [
+        "construct_dataset"
+      ],
+      "internal_imports": [],
+      "external_imports": [
+        "clearml",
+        "glob",
+        "numpy",
+        "pathlib",
+        "re",
+        "ultralytics",
+        "yaml"
+      ],
+      "error": null,
+      "path": "utils/loggers/clearml/clearml_utils.py"
+    },
+    "utils.aws.resume": {
+      "loc": 44,
+      "doc": "",
+      "classes": [],
+      "functions": [],
+      "internal_imports": [],
+      "external_imports": [
+        "os",
+        "pathlib",
+        "sys",
+        "torch",
+        "ultralytics",
+        "yaml"
+      ],
+      "error": null,
+      "path": "utils/aws/resume.py"
+    },
+    "utils.aws": {
+      "loc": 2,
+      "doc": "",
+      "classes": [],
+      "functions": [],
+      "internal_imports": [],
+      "external_imports": [],
+      "error": null,
+      "path": "utils/aws/__init__.py"
+    },
+    "utils.flask_rest_api.restapi": {
+      "loc": 50,
+      "doc": "Run a Flask REST API exposing one or more YOLOv5s models.",
+      "classes": [],
+      "functions": [
+        "predict"
+      ],
+      "internal_imports": [],
+      "external_imports": [
+        "PIL",
+        "argparse",
+        "flask",
+        "io",
+        "torch"
+      ],
+      "error": null,
+      "path": "utils/flask_rest_api/restapi.py"
+    },
+    "utils.flask_rest_api.example_request": {
+      "loc": 18,
+      "doc": "Perform test request.",
+      "classes": [],
+      "functions": [],
+      "internal_imports": [],
+      "external_imports": [
+        "pprint",
+        "requests"
+      ],
+      "error": null,
+      "path": "utils/flask_rest_api/example_request.py"
+    }
+  },
+  "edges": [
+    [
+      "dpu_silu_experiment",
+      "export_dpu_wrapper_AB3"
+    ],
+    [
+      "dpu_silu_experiment",
+      "quantize_vitis_AB4"
+    ],
+    [
+      "export",
+      "models.experimental"
+    ],
+    [
+      "export",
+      "models.tf"
+    ],
+    [
+      "export",
+      "models.yolo"
+    ],
+    [
+      "export",
+      "utils.dataloaders"
+    ],
+    [
+      "export",
+      "utils.general"
+    ],
+    [
+      "export",
+      "utils.torch_utils"
+    ],
+    [
+      "inspect_common_AB2",
+      "models"
+    ],
+    [
+      "models.common",
+      "export"
+    ],
+    [
+      "models.common",
+      "models.experimental"
+    ],
+    [
+      "models.common",
+      "utils"
+    ],
+    [
+      "models.common",
+      "utils.dataloaders"
+    ],
+    [
+      "models.common",
+      "utils.downloads"
+    ],
+    [
+      "models.common",
+      "utils.general"
+    ],
+    [
+      "models.common",
+      "utils.torch_utils"
+    ],
+    [
+      "models.common",
+      "utils.triton"
+    ],
+    [
+      "models.common_orig",
+      "export"
+    ],
+    [
+      "models.common_orig",
+      "models.experimental"
+    ],
+    [
+      "models.common_orig",
+      "utils"
+    ],
+    [
+      "models.common_orig",
+      "utils.dataloaders"
+    ],
+    [
+      "models.common_orig",
+      "utils.downloads"
+    ],
+    [
+      "models.common_orig",
+      "utils.general"
+    ],
+    [
+      "models.common_orig",
+      "utils.torch_utils"
+    ],
+    [
+      "models.common_orig",
+      "utils.triton"
+    ],
+    [
+      "models.experimental",
+      "models.yolo"
+    ],
+    [
+      "models.experimental",
+      "utils.downloads"
+    ],
+    [
+      "models.tf",
+      "models.common"
+    ],
+    [
+      "models.tf",
+      "models.experimental"
+    ],
+    [
+      "models.tf",
+      "models.yolo"
+    ],
+    [
+      "models.tf",
+      "utils.activations"
+    ],
+    [
+      "models.tf",
+      "utils.general"
+    ],
+    [
+      "models.yolo",
+      "models.common"
+    ],
+    [
+      "models.yolo",
+      "models.experimental"
+    ],
+    [
+      "models.yolo",
+      "utils.autoanchor"
+    ],
+    [
+      "models.yolo",
+      "utils.general"
+    ],
+    [
+      "models.yolo",
+      "utils.plots"
+    ],
+    [
+      "models.yolo",
+      "utils.torch_utils"
+    ],
+    [
+      "quantize_vitis_AB4",
+      "export_dpu_wrapper_AB3"
+    ],
+    [
+      "train",
+      "models.experimental"
+    ],
+    [
+      "train",
+      "models.yolo"
+    ],
+    [
+      "train",
+      "utils.autoanchor"
+    ],
+    [
+      "train",
+      "utils.autobatch"
+    ],
+    [
+      "train",
+      "utils.callbacks"
+    ],
+    [
+      "train",
+      "utils.dataloaders"
+    ],
+    [
+      "train",
+      "utils.downloads"
+    ],
+    [
+      "train",
+      "utils.general"
+    ],
+    [
+      "train",
+      "utils.loggers"
+    ],
+    [
+      "train",
+      "utils.loggers.comet.comet_utils"
+    ],
+    [
+      "train",
+      "utils.loss"
+    ],
+    [
+      "train",
+      "utils.metrics"
+    ],
+    [
+      "train",
+      "utils.plots"
+    ],
+    [
+      "train",
+      "utils.torch_utils"
+    ],
+    [
+      "train",
+      "val"
+    ],
+    [
+      "utils",
+      "utils.general"
+    ],
+    [
+      "utils",
+      "utils.torch_utils"
+    ],
+    [
+      "utils.augmentations",
+      "utils.general"
+    ],
+    [
+      "utils.augmentations",
+      "utils.metrics"
+    ],
+    [
+      "utils.autoanchor",
+      "utils"
+    ],
+    [
+      "utils.autoanchor",
+      "utils.dataloaders"
+    ],
+    [
+      "utils.autoanchor",
+      "utils.general"
+    ],
+    [
+      "utils.autobatch",
+      "utils.general"
+    ],
+    [
+      "utils.autobatch",
+      "utils.torch_utils"
+    ],
+    [
+      "utils.dataloaders",
+      "utils.augmentations"
+    ],
+    [
+      "utils.dataloaders",
+      "utils.general"
+    ],
+    [
+      "utils.dataloaders",
+      "utils.torch_utils"
+    ],
+    [
+      "utils.downloads",
+      "utils.general"
+    ],
+    [
+      "utils.general",
+      "models.common"
+    ],
+    [
+      "utils.general",
+      "utils"
+    ],
+    [
+      "utils.general",
+      "utils.downloads"
+    ],
+    [
+      "utils.general",
+      "utils.metrics"
+    ],
+    [
+      "utils.loggers",
+      "utils.general"
+    ],
+    [
+      "utils.loggers",
+      "utils.loggers.clearml.clearml_utils"
+    ],
+    [
+      "utils.loggers",
+      "utils.loggers.comet"
+    ],
+    [
+      "utils.loggers",
+      "utils.loggers.wandb.wandb_utils"
+    ],
+    [
+      "utils.loggers",
+      "utils.plots"
+    ],
+    [
+      "utils.loggers",
+      "utils.torch_utils"
+    ],
+    [
+      "utils.loggers.comet",
+      "utils.dataloaders"
+    ],
+    [
+      "utils.loggers.comet",
+      "utils.general"
+    ],
+    [
+      "utils.loggers.comet",
+      "utils.metrics"
+    ],
+    [
+      "utils.loggers.comet.hpo",
+      "train"
+    ],
+    [
+      "utils.loggers.comet.hpo",
+      "utils.callbacks"
+    ],
+    [
+      "utils.loggers.comet.hpo",
+      "utils.general"
+    ],
+    [
+      "utils.loggers.comet.hpo",
+      "utils.torch_utils"
+    ],
+    [
+      "utils.loggers.wandb.wandb_utils",
+      "utils.general"
+    ],
+    [
+      "utils.loss",
+      "utils.metrics"
+    ],
+    [
+      "utils.loss",
+      "utils.torch_utils"
+    ],
+    [
+      "utils.metrics",
+      "utils"
+    ],
+    [
+      "utils.plots",
+      "utils"
+    ],
+    [
+      "utils.plots",
+      "utils.augmentations"
+    ],
+    [
+      "utils.plots",
+      "utils.general"
+    ],
+    [
+      "utils.plots",
+      "utils.metrics"
+    ],
+    [
+      "utils.segment.augmentations",
+      "utils.augmentations"
+    ],
+    [
+      "utils.segment.augmentations",
+      "utils.general"
+    ],
+    [
+      "utils.segment.dataloaders",
+      "utils.augmentations"
+    ],
+    [
+      "utils.segment.dataloaders",
+      "utils.dataloaders"
+    ],
+    [
+      "utils.segment.dataloaders",
+      "utils.general"
+    ],
+    [
+      "utils.segment.dataloaders",
+      "utils.segment.augmentations"
+    ],
+    [
+      "utils.segment.dataloaders",
+      "utils.torch_utils"
+    ],
+    [
+      "utils.segment.loss",
+      "utils.general"
+    ],
+    [
+      "utils.segment.loss",
+      "utils.loss"
+    ],
+    [
+      "utils.segment.loss",
+      "utils.metrics"
+    ],
+    [
+      "utils.segment.loss",
+      "utils.segment.general"
+    ],
+    [
+      "utils.segment.loss",
+      "utils.torch_utils"
+    ],
+    [
+      "utils.segment.metrics",
+      "utils.metrics"
+    ],
+    [
+      "utils.segment.plots",
+      "utils"
+    ],
+    [
+      "utils.segment.plots",
+      "utils.general"
+    ],
+    [
+      "utils.segment.plots",
+      "utils.plots"
+    ],
+    [
+      "utils.torch_utils",
+      "models.common"
+    ],
+    [
+      "utils.torch_utils",
+      "utils.general"
+    ],
+    [
+      "val",
+      "models.common"
+    ],
+    [
+      "val",
+      "utils.callbacks"
+    ],
+    [
+      "val",
+      "utils.dataloaders"
+    ],
+    [
+      "val",
+      "utils.general"
+    ],
+    [
+      "val",
+      "utils.metrics"
+    ],
+    [
+      "val",
+      "utils.plots"
+    ],
+    [
+      "val",
+      "utils.torch_utils"
+    ],
+    [
+      "vitis_out.probe_init",
+      "export_dpu_wrapper_AB3"
+    ]
+  ]
+}

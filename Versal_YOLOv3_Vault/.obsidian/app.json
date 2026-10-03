@@ -1,0 +1,10 @@
+{
+  "alwaysUpdateLinks": true,
+  "newLinkFormat": "shortest",
+  "useMarkdownLinks": false,
+  "attachmentFolderPath": "99 Attachments",
+  "readableLineLength": true,
+  "defaultViewMode": "preview",
+  "showLineNumber": true,
+  "strictLineBreaks": false
+}

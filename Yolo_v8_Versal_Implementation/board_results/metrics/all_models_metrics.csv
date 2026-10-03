@@ -1,0 +1,50 @@
+parameter,unit,yolov8n,yolov8s,yolov8m,yolov8l,source
+model,,yolov8n,yolov8s,yolov8m,yolov8l,read from the .pt checkpoint
+board,,"VCK190, DPUCVDX8G_ISA3_C32B6, batch 6, 333 MHz, VART 3.0.0","VCK190, DPUCVDX8G_ISA3_C32B6, batch 6, 333 MHz, VART 3.0.0","VCK190, DPUCVDX8G_ISA3_C32B6, batch 6, 333 MHz, VART 3.0.0","VCK190, DPUCVDX8G_ISA3_C32B6, batch 6, 333 MHz, VART 3.0.0",fixed
+configuration,,"INT8, HardSwish, letterbox, 640x640, conf 0.001, IoU 0.45, max_det 300","INT8, HardSwish, letterbox, 640x640, conf 0.001, IoU 0.45, max_det 300","INT8, HardSwish, letterbox, 640x640, conf 0.001, IoU 0.45, max_det 300","INT8, HardSwish, letterbox, 640x640, conf 0.001, IoU 0.45, max_det 300",fixed
+fps,images/s,14.38,15.86,14.34,12.45,"measured: wall clock, end-to-end incl. preprocess+DPU+decode+NMS"
+fps_dpu_only,images/s,22.16,22.24,20.69,15.04,"measured: board_eval --benchmark, back-to-back inferences, excludes host decode+NMS"
+latency_per_image,ms,69.54,63.05,69.74,80.32,derived from the rows above
+runtime_5000_images,s,347,315,348,401,"measured: wall clock, end-to-end incl. preprocess+DPU+decode+NMS"
+power_idle,W,13.02,13.27,13.30,12.81,"measured: host_vck190/measure_power.py, 17 INA226 rails via /sys/class/hwmon, sustained load (400 back-to-back inferences), 0.5 s sampling"
+power_under_load,W,13.70,14.00,14.01,13.81,"measured: host_vck190/measure_power.py, 17 INA226 rails via /sys/class/hwmon, sustained load (400 back-to-back inferences), 0.5 s sampling"
+power_attributable,W,0.69,0.73,0.71,1.01,"load minus idle; measured: host_vck190/measure_power.py, 17 INA226 rails via /sys/class/hwmon, sustained load (400 back-to-back inferences), 0.5 s sampling"
+energy_per_image,J/image,0.953,0.883,0.977,1.110,"derived: power_under_load / fps, using the CLEAN fps from the scored run - sampling 17 I2C rails perturbs throughput, so the rate observed during sampling is not the rate to divide by"
+energy_per_image_attributable,J/image,0.048,0.046,0.050,0.081,power_attributable / fps; excludes the board's static draw
+efficiency,images/s/W,1.05,1.13,1.02,0.90,fps / power_under_load
+mAP@0.5,,0.445271,0.542305,0.600114,0.623348,"measured: board_eval_vck190.py + pycocotools, val2017 5000 images"
+mAP@0.5:0.95,,0.291348,0.371572,0.425569,0.446702,"measured: board_eval_vck190.py + pycocotools, val2017 5000 images"
+mAP@0.75,,0.307229,0.393132,0.456461,0.480741,"measured: board_eval_vck190.py + pycocotools, val2017 5000 images"
+AR@100,,0.494916,0.560285,0.605190,0.618074,"measured: board_eval_vck190.py + pycocotools, val2017 5000 images"
+mAP@0.5_independent_scorer,,0.4430,0.5391,0.5976,0.6211,"measured: tools/board_curves.py (own IoU matcher, no pycocotools)"
+float_mAP@0.5,,0.5187,0.6106,0.6654,0.6916,Versal_AI/benchmarks/pytorch_results.csv (PC float baseline)
+float_mAP@0.5:0.95,,0.3681,0.4440,0.4979,0.5244,Versal_AI/benchmarks/pytorch_results.csv (PC float baseline)
+accuracy_retained@0.5,%,85.8,88.8,90.2,90.1,derived from the rows above
+accuracy_retained@0.5:0.95,%,79.1,83.7,85.5,85.2,derived from the rows above
+precision,,0.5889,0.6523,0.6621,0.7295,"measured: tools/extract_pr_f1.py at the best-F1 confidence, IoU 0.5"
+recall,,0.4123,0.4906,0.5616,0.5559,"measured: tools/extract_pr_f1.py at the best-F1 confidence, IoU 0.5"
+f1_score,,0.4682,0.5482,0.5981,0.6128,"measured: tools/extract_pr_f1.py at the best-F1 confidence, IoU 0.5"
+operating_confidence,,0.269,0.377,0.320,0.377,"measured: tools/extract_pr_f1.py at the best-F1 confidence, IoU 0.5"
+detections_total,count,794255,637641,773508,957300,"measured: board_eval_vck190.py + pycocotools, val2017 5000 images"
+parameters,M,3.16,11.17,25.90,43.69,read from the .pt checkpoint
+xmodel_size,MiB,3.39,11.06,25.36,42.69,read from compiled xmodel: xir DPU subgraph attributes
+ddr_weights,MiB,3.01,10.64,24.69,41.65,read from compiled xmodel: xir DPU subgraph attributes
+ddr_activations,MiB,11.10,21.44,32.96,49.85,read from compiled xmodel: xir DPU subgraph attributes
+ddr_input_buffer,MiB,1.17,1.17,1.17,1.17,read from compiled xmodel: xir DPU subgraph attributes
+ddr_output_buffer,MiB,1.15,1.15,1.15,1.15,read from compiled xmodel: xir DPU subgraph attributes
+ddr_total,MiB,16.43,34.40,59.98,93.83,derived from the rows above
+microcode_size,KiB,145.5,186.9,393.6,775.4,read from compiled xmodel: xir DPU subgraph attributes
+workload,GOP/image,8.764,28.641,79.005,165.255,read from compiled xmodel: xir DPU subgraph attributes
+workload_on_arch,GOP/image,10.031,29.985,83.248,168.270,read from compiled xmodel: xir DPU subgraph attributes
+dpu_array_efficiency,%,87.4,95.5,94.9,98.2,derived from the rows above
+achieved_compute,GOP/s,126.0,454.2,1132.9,2057.4,derived from the rows above
+conv_modules,count,57,57,77,97,read from the .pt checkpoint
+dpu_ops,count,244,244,310,376,read from compiled xmodel: xir DPU subgraph attributes
+dpu_subgraphs,count,1,1,1,1,read from compiled xmodel: xir DPU subgraph attributes
+cpu_ops,,fix2float x3,fix2float x3,fix2float x3,fix2float x3,read from compiled xmodel: xir DPU subgraph attributes
+fpga_area_LUT,count,NOT_APPLICABLE_PER_MODEL,NOT_APPLICABLE_PER_MODEL,NOT_APPLICABLE_PER_MODEL,NOT_APPLICABLE_PER_MODEL,"Model footprint, not FPGA area. FPGA utilisation (LUT/FF/BRAM/URAM/DSP) belongs to the DPU bitstream, not the model: all four share one DPUCVDX8G_ISA3_C32B6 build (identical dpu_fingerprint), so it does not vary per model, and the figures live in a Vivado report this prebuilt platform does not ship."
+fpga_area_FF,count,NOT_APPLICABLE_PER_MODEL,NOT_APPLICABLE_PER_MODEL,NOT_APPLICABLE_PER_MODEL,NOT_APPLICABLE_PER_MODEL,"Model footprint, not FPGA area. FPGA utilisation (LUT/FF/BRAM/URAM/DSP) belongs to the DPU bitstream, not the model: all four share one DPUCVDX8G_ISA3_C32B6 build (identical dpu_fingerprint), so it does not vary per model, and the figures live in a Vivado report this prebuilt platform does not ship."
+fpga_area_BRAM,count,NOT_APPLICABLE_PER_MODEL,NOT_APPLICABLE_PER_MODEL,NOT_APPLICABLE_PER_MODEL,NOT_APPLICABLE_PER_MODEL,"Model footprint, not FPGA area. FPGA utilisation (LUT/FF/BRAM/URAM/DSP) belongs to the DPU bitstream, not the model: all four share one DPUCVDX8G_ISA3_C32B6 build (identical dpu_fingerprint), so it does not vary per model, and the figures live in a Vivado report this prebuilt platform does not ship."
+fpga_area_URAM,count,NOT_APPLICABLE_PER_MODEL,NOT_APPLICABLE_PER_MODEL,NOT_APPLICABLE_PER_MODEL,NOT_APPLICABLE_PER_MODEL,"Model footprint, not FPGA area. FPGA utilisation (LUT/FF/BRAM/URAM/DSP) belongs to the DPU bitstream, not the model: all four share one DPUCVDX8G_ISA3_C32B6 build (identical dpu_fingerprint), so it does not vary per model, and the figures live in a Vivado report this prebuilt platform does not ship."
+fpga_area_DSP,count,NOT_APPLICABLE_PER_MODEL,NOT_APPLICABLE_PER_MODEL,NOT_APPLICABLE_PER_MODEL,NOT_APPLICABLE_PER_MODEL,"Model footprint, not FPGA area. FPGA utilisation (LUT/FF/BRAM/URAM/DSP) belongs to the DPU bitstream, not the model: all four share one DPUCVDX8G_ISA3_C32B6 build (identical dpu_fingerprint), so it does not vary per model, and the figures live in a Vivado report this prebuilt platform does not ship."
+dpu_fingerprint,,433190037845252193,433190037845252193,433190037845252193,433190037845252193,identical across all four models - one DPU build serves them all

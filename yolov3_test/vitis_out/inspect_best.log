@@ -1,0 +1,216 @@
+
+============================================================
+ INSPECTING CHECKPOINT: runs/train/exp2/weights/best.pt
+============================================================
+[+] Top-Level Keys in Checkpoint: ['epoch', 'best_fitness', 'model', 'ema', 'updates', 'optimizer', 'opt', 'git', 'date']
+[+] Saved Epoch: 34
+[+] Model Object Type: <class 'models.yolo.DetectionModel'>
+[+] Number of Classes (nc): 80
+[+] Class Labels: {0: 'person', 1: 'bicycle', 2: 'car', 3: 'motorcycle', 4: 'airplane', 5: 'bus', 6: 'train', 7: 'truck', 8: 'boat', 9: 'traffic light', 10: 'fire hydrant', 11: 'stop sign', 12: 'parking meter', 13: 'bench', 14: 'bird', 15: 'cat', 16: 'dog', 17: 'horse', 18: 'sheep', 19: 'cow', 20: 'elephant', 21: 'bear', 22: 'zebra', 23: 'giraffe', 24: 'backpack', 25: 'umbrella', 26: 'handbag', 27: 'tie', 28: 'suitcase', 29: 'frisbee', 30: 'skis', 31: 'snowboard', 32: 'sports ball', 33: 'kite', 34: 'baseball bat', 35: 'baseball glove', 36: 'skateboard', 37: 'surfboard', 38: 'tennis racket', 39: 'bottle', 40: 'wine glass', 41: 'cup', 42: 'fork', 43: 'knife', 44: 'spoon', 45: 'bowl', 46: 'banana', 47: 'apple', 48: 'sandwich', 49: 'orange', 50: 'broccoli', 51: 'carrot', 52: 'hot dog', 53: 'pizza', 54: 'donut', 55: 'cake', 56: 'chair', 57: 'couch', 58: 'potted plant', 59: 'bed', 60: 'dining table', 61: 'toilet', 62: 'tv', 63: 'laptop', 64: 'mouse', 65: 'remote', 66: 'keyboard', 67: 'cell phone', 68: 'microwave', 69: 'oven', 70: 'toaster', 71: 'sink', 72: 'refrigerator', 73: 'book', 74: 'clock', 75: 'vase', 76: 'scissors', 77: 'teddy bear', 78: 'hair drier', 79: 'toothbrush'}
+
+--- Embedded Architecture YAML Config ---
+anchors:
+- - 10
+  - 13
+  - 16
+  - 30
+  - 33
+  - 23
+- - 30
+  - 61
+  - 62
+  - 45
+  - 59
+  - 119
+- - 116
+  - 90
+  - 156
+  - 198
+  - 373
+  - 326
+backbone:
+- - -1
+  - 1
+  - Conv
+  - - 32
+    - 3
+    - 1
+- - -1
+  - 1
+  - Conv
+  - - 64
+    - 3
+    - 2
+- - -1
+  - 1
+  - Bottleneck_merged
+  - - 64
+- - -1
+  - 1
+  - Conv
+  - - 128
+    - 3
+    - 2
+- - -1
+  - 2
+  - Bottleneck_merged
+  - - 128
+- - -1
+  - 1
+  - Conv
+  - - 256
+    - 3
+    - 2
+- - -1
+  - 8
+  - Bottleneck_merged
+  - - 256
+- - -1
+  - 1
+  - Conv
+  - - 512
+    - 3
+    - 2
+- - -1
+  - 8
+  - Bottleneck_merged
+  - - 512
+- - -1
+  - 1
+  - Conv
+  - - 1024
+    - 3
+    - 2
+- - -1
+  - 4
+  - Bottleneck_merged
+  - - 1024
+ch: 3
+depth_multiple: 1.0
+head:
+- - -1
+  - 1
+  - Bottleneck
+  - - 1024
+    - false
+- - -1
+  - 1
+  - Conv
+  - - 512
+    - 1
+    - 1
+- - -1
+  - 1
+  - Conv
+  - - 1024
+    - 3
+    - 1
+- - -1
+  - 1
+  - Conv
+  - - 512
+    - 1
+    - 1
+- - -1
+  - 1
+  - Conv
+  - - 1024
+    - 3
+    - 1
+- - -2
+  - 1
+  - Conv
+  - - 256
+    - 1
+    - 1
+- - -1
+  - 1
+  - nn.Upsample
+  - - None
+    - 2
+    - nearest
+- - - -1
+    - 8
+  - 1
+  - Concat
+  - - 1
+- - -1
+  - 1
+  - Bottleneck
+  - - 512
+    - false
+- - -1
+  - 1
+  - Bottleneck
+  - - 512
+    - false
+- - -1
+  - 1
+  - Conv
+  - - 256
+    - 1
+    - 1
+- - -1
+  - 1
+  - Conv
+  - - 512
+    - 3
+    - 1
+- - -2
+  - 1
+  - Conv
+  - - 128
+    - 1
+    - 1
+- - -1
+  - 1
+  - nn.Upsample
+  - - None
+    - 2
+    - nearest
+- - - -1
+    - 6
+  - 1
+  - Concat
+  - - 1
+- - -1
+  - 1
+  - Bottleneck
+  - - 256
+    - false
+- - -1
+  - 2
+  - Bottleneck
+  - - 256
+    - false
+- - - 27
+    - 22
+    - 15
+  - 1
+  - Detect
+  - - nc
+    - anchors
+nc: 80
+width_multiple: 1.0
+
+
+--- Detection Head & Anchors ---
+  Layer Name: model.28 (Detect)
+  Anchors shape: torch.Size([3, 3, 2])
+  Anchors:
+tensor([[[ 1.25000,  1.62500],
+         [ 2.00000,  3.75000],
+         [ 4.12500,  2.87500]],
+
+        [[ 1.87500,  3.81250],
+         [ 3.87500,  2.81250],
+         [ 3.68750,  7.43750]],
+
+        [[ 3.62500,  2.81250],
+         [ 4.87500,  6.18750],
+         [11.65625, 10.18750]]], dtype=torch.float16)
+  Strides: tensor([ 8., 16., 32.], dtype=torch.float16)
+  Outputs per anchor (no): 85
+
+--- Saved Training Arguments ---
+  imgsz: 416, batch_size: 8, data: data/train2017_yolo.yaml

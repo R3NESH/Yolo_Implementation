@@ -1,0 +1,5 @@
+model,images,float_silu,float_hardswish,int8_hardswish,activation_delta,quant_delta,total_delta,activation_share_pct
+yolov8n,500,0.5674,0.4809,0.4714,-0.0865,-0.0095,-0.0960,90%
+yolov8s,500,0.6448,0.5880,0.5681,-0.0568,-0.0199,-0.0767,74%
+yolov8m,500,0.6940,0.6434,0.6349,-0.0505,-0.0085,-0.0591,86%
+yolov8l,500,0.7222,0.6689,0.6618,-0.0533,-0.0071,-0.0604,88%

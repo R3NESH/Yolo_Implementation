@@ -1,0 +1,112 @@
+[UNILOG][WARNING] The operator named YOLOv3DPUWrapper__YOLOv3DPUWrapper_Conv_layers__ModuleList_0__SiLU_act__8895, type: aten::silu_, is not defined in XIR. XIR creates the definition of this operator automatically. You should specify the shape and the data_type of the output tensor of this operation by set_attr("shape", std::vector<int>) and set_attr("data_type", std::string)
+[UNILOG][INFO] Compile mode: dpu
+[UNILOG][INFO] Debug mode: null
+[UNILOG][INFO] Target architecture: DPUCVDX8G_ISA3_C32B6
+[UNILOG][INFO] Graph name: YOLOv3DPUWrapper, with op num: 562
+[UNILOG][INFO] Begin to compile...
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Conv_layers__ModuleList_0__Conv2d_conv__ret_3_sink_transpose_0, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Conv_layers__ModuleList_0__SiLU_act__8895_swim_transpose_0, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Conv_layers__ModuleList_1__Conv2d_conv__ret_7_sink_transpose_1, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Conv_layers__ModuleList_1__SiLU_act__8923_swim_transpose_2, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Bottleneck_merged_layers__ModuleList_2__Conv_cv2__Conv2d_conv__ret_11_sink_transpose_2, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Bottleneck_merged_layers__ModuleList_2__Conv_cv2__SiLU_act__8951_swim_transpose_3, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Conv_layers__ModuleList_3__Conv2d_conv__ret_17_sink_transpose_3, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Conv_layers__ModuleList_3__SiLU_act__8982_swim_transpose_5, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Sequential_layers__ModuleList_4__Bottleneck_merged_0__Conv_cv2__Conv2d_conv__ret_21_sink_transpose_4, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Sequential_layers__ModuleList_4__Bottleneck_merged_0__Conv_cv2__SiLU_act__9010_swim_transpose_6, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Sequential_layers__ModuleList_4__Bottleneck_merged_1__Conv_cv2__Conv2d_conv__ret_27_sink_transpose_5, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Sequential_layers__ModuleList_4__Bottleneck_merged_1__Conv_cv2__SiLU_act__9041_swim_transpose_7, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Conv_layers__ModuleList_5__Conv2d_conv__ret_33_sink_transpose_6, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Conv_layers__ModuleList_5__SiLU_act__9072_swim_transpose_9, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Sequential_layers__ModuleList_6__Bottleneck_merged_0__Conv_cv2__Conv2d_conv__ret_37_sink_transpose_7, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Sequential_layers__ModuleList_6__Bottleneck_merged_0__Conv_cv2__SiLU_act__9100_swim_transpose_10, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Sequential_layers__ModuleList_6__Bottleneck_merged_1__Conv_cv2__Conv2d_conv__ret_43_sink_transpose_8, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Sequential_layers__ModuleList_6__Bottleneck_merged_1__Conv_cv2__SiLU_act__9131_swim_transpose_11, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Sequential_layers__ModuleList_6__Bottleneck_merged_2__Conv_cv2__Conv2d_conv__ret_49_sink_transpose_9, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Sequential_layers__ModuleList_6__Bottleneck_merged_2__Conv_cv2__SiLU_act__9162_swim_transpose_12, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Sequential_layers__ModuleList_6__Bottleneck_merged_3__Conv_cv2__Conv2d_conv__ret_55_sink_transpose_10, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Sequential_layers__ModuleList_6__Bottleneck_merged_3__Conv_cv2__SiLU_act__9193_swim_transpose_13, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Sequential_layers__ModuleList_6__Bottleneck_merged_4__Conv_cv2__Conv2d_conv__ret_61_sink_transpose_11, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Sequential_layers__ModuleList_6__Bottleneck_merged_4__Conv_cv2__SiLU_act__9224_swim_transpose_14, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Sequential_layers__ModuleList_6__Bottleneck_merged_5__Conv_cv2__Conv2d_conv__ret_67_sink_transpose_12, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Sequential_layers__ModuleList_6__Bottleneck_merged_5__Conv_cv2__SiLU_act__9255_swim_transpose_15, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Sequential_layers__ModuleList_6__Bottleneck_merged_6__Conv_cv2__Conv2d_conv__ret_73_sink_transpose_13, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Sequential_layers__ModuleList_6__Bottleneck_merged_6__Conv_cv2__SiLU_act__9286_swim_transpose_16, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Sequential_layers__ModuleList_6__Bottleneck_merged_7__Conv_cv2__Conv2d_conv__ret_79_sink_transpose_14, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Sequential_layers__ModuleList_6__Bottleneck_merged_7__Conv_cv2__SiLU_act__9317_swim_transpose_17, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Conv_layers__ModuleList_7__Conv2d_conv__ret_85_sink_transpose_15, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Conv_layers__ModuleList_7__SiLU_act__9348_swim_transpose_19, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Sequential_layers__ModuleList_8__Bottleneck_merged_0__Conv_cv2__Conv2d_conv__ret_89_sink_transpose_16, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Sequential_layers__ModuleList_8__Bottleneck_merged_0__Conv_cv2__SiLU_act__9376_swim_transpose_20, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Sequential_layers__ModuleList_8__Bottleneck_merged_1__Conv_cv2__Conv2d_conv__ret_95_sink_transpose_17, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Sequential_layers__ModuleList_8__Bottleneck_merged_1__Conv_cv2__SiLU_act__9407_swim_transpose_21, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Sequential_layers__ModuleList_8__Bottleneck_merged_2__Conv_cv2__Conv2d_conv__ret_101_sink_transpose_18, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Sequential_layers__ModuleList_8__Bottleneck_merged_2__Conv_cv2__SiLU_act__9438_swim_transpose_22, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Sequential_layers__ModuleList_8__Bottleneck_merged_3__Conv_cv2__Conv2d_conv__ret_107_sink_transpose_19, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Sequential_layers__ModuleList_8__Bottleneck_merged_3__Conv_cv2__SiLU_act__9469_swim_transpose_23, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Sequential_layers__ModuleList_8__Bottleneck_merged_4__Conv_cv2__Conv2d_conv__ret_113_sink_transpose_20, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Sequential_layers__ModuleList_8__Bottleneck_merged_4__Conv_cv2__SiLU_act__9500_swim_transpose_24, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Sequential_layers__ModuleList_8__Bottleneck_merged_5__Conv_cv2__Conv2d_conv__ret_119_sink_transpose_21, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Sequential_layers__ModuleList_8__Bottleneck_merged_5__Conv_cv2__SiLU_act__9531_swim_transpose_25, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Sequential_layers__ModuleList_8__Bottleneck_merged_6__Conv_cv2__Conv2d_conv__ret_125_sink_transpose_22, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Sequential_layers__ModuleList_8__Bottleneck_merged_6__Conv_cv2__SiLU_act__9562_swim_transpose_26, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Sequential_layers__ModuleList_8__Bottleneck_merged_7__Conv_cv2__Conv2d_conv__ret_131_sink_transpose_23, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Sequential_layers__ModuleList_8__Bottleneck_merged_7__Conv_cv2__SiLU_act__9593_swim_transpose_27, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Conv_layers__ModuleList_9__Conv2d_conv__ret_137_sink_transpose_24, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Conv_layers__ModuleList_9__SiLU_act__9624_swim_transpose_29, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Sequential_layers__ModuleList_10__Bottleneck_merged_0__Conv_cv2__Conv2d_conv__ret_141_sink_transpose_25, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Sequential_layers__ModuleList_10__Bottleneck_merged_0__Conv_cv2__SiLU_act__9652_swim_transpose_30, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Sequential_layers__ModuleList_10__Bottleneck_merged_1__Conv_cv2__Conv2d_conv__ret_147_sink_transpose_26, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Sequential_layers__ModuleList_10__Bottleneck_merged_1__Conv_cv2__SiLU_act__9683_swim_transpose_31, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Sequential_layers__ModuleList_10__Bottleneck_merged_2__Conv_cv2__Conv2d_conv__ret_153_sink_transpose_27, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Sequential_layers__ModuleList_10__Bottleneck_merged_2__Conv_cv2__SiLU_act__9714_swim_transpose_32, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Sequential_layers__ModuleList_10__Bottleneck_merged_3__Conv_cv2__Conv2d_conv__ret_159_sink_transpose_28, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Sequential_layers__ModuleList_10__Bottleneck_merged_3__Conv_cv2__SiLU_act__9745_swim_transpose_33, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Bottleneck_layers__ModuleList_11__Conv_cv1__Conv2d_conv__ret_165_sink_transpose_29, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Bottleneck_layers__ModuleList_11__Conv_cv1__SiLU_act__9776_swim_transpose_34, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Bottleneck_layers__ModuleList_11__Conv_cv2__Conv2d_conv__ret_169_sink_transpose_30, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Bottleneck_layers__ModuleList_11__Conv_cv2__SiLU_act__9804_swim_transpose_35, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Conv_layers__ModuleList_12__Conv2d_conv__ret_173_sink_transpose_31, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Conv_layers__ModuleList_12__SiLU_act__9832_swim_transpose_36, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Conv_layers__ModuleList_13__Conv2d_conv__ret_177_sink_transpose_32, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Conv_layers__ModuleList_13__SiLU_act__9860_swim_transpose_37, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Conv_layers__ModuleList_14__Conv2d_conv__ret_181_sink_transpose_33, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Conv_layers__ModuleList_14__SiLU_act__9888_swim_transpose_39, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Conv_layers__ModuleList_15__Conv2d_conv__ret_185_sink_transpose_34, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Conv_layers__ModuleList_15__SiLU_act__9916_swim_transpose_55, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Conv_layers__ModuleList_16__Conv2d_conv__ret_189_sink_transpose_35, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Conv_layers__ModuleList_16__SiLU_act__9944_swim_transpose_40, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Bottleneck_layers__ModuleList_19__Conv_cv1__Conv2d_conv__ret_197_sink_transpose_36, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Bottleneck_layers__ModuleList_19__Conv_cv1__SiLU_act__9982_swim_transpose_41, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Bottleneck_layers__ModuleList_19__Conv_cv2__Conv2d_conv__ret_201_sink_transpose_37, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Bottleneck_layers__ModuleList_19__Conv_cv2__SiLU_act__10010_swim_transpose_42, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Bottleneck_layers__ModuleList_20__Conv_cv1__Conv2d_conv__ret_205_sink_transpose_38, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Bottleneck_layers__ModuleList_20__Conv_cv1__SiLU_act__10038_swim_transpose_43, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Bottleneck_layers__ModuleList_20__Conv_cv2__Conv2d_conv__ret_209_sink_transpose_39, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Bottleneck_layers__ModuleList_20__Conv_cv2__SiLU_act__10066_swim_transpose_44, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Conv_layers__ModuleList_21__Conv2d_conv__ret_213_sink_transpose_40, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Conv_layers__ModuleList_21__SiLU_act__10094_swim_transpose_46, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Conv_layers__ModuleList_22__Conv2d_conv__ret_217_sink_transpose_41, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Conv_layers__ModuleList_22__SiLU_act__10122_swim_transpose_54, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Conv_layers__ModuleList_23__Conv2d_conv__ret_221_sink_transpose_42, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Conv_layers__ModuleList_23__SiLU_act__10150_swim_transpose_47, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Bottleneck_layers__ModuleList_26__Conv_cv1__Conv2d_conv__ret_229_sink_transpose_43, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Bottleneck_layers__ModuleList_26__Conv_cv1__SiLU_act__10188_swim_transpose_48, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Bottleneck_layers__ModuleList_26__Conv_cv2__Conv2d_conv__ret_233_sink_transpose_44, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Bottleneck_layers__ModuleList_26__Conv_cv2__SiLU_act__10216_swim_transpose_49, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Sequential_layers__ModuleList_27__Bottleneck_0__Conv_cv1__Conv2d_conv__ret_237_sink_transpose_45, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Sequential_layers__ModuleList_27__Bottleneck_0__Conv_cv1__SiLU_act__10244_swim_transpose_50, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Sequential_layers__ModuleList_27__Bottleneck_0__Conv_cv2__Conv2d_conv__ret_241_sink_transpose_46, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Sequential_layers__ModuleList_27__Bottleneck_0__Conv_cv2__SiLU_act__10272_swim_transpose_51, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Sequential_layers__ModuleList_27__Bottleneck_1__Conv_cv1__Conv2d_conv__ret_245_sink_transpose_47, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Sequential_layers__ModuleList_27__Bottleneck_1__Conv_cv1__SiLU_act__10300_swim_transpose_52, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Sequential_layers__ModuleList_27__Bottleneck_1__Conv_cv2__Conv2d_conv__ret_249_sink_transpose_48, type = transpose} has been assigned to CPU.
+[UNILOG][WARNING] xir::Op{name = YOLOv3DPUWrapper__YOLOv3DPUWrapper_Sequential_layers__ModuleList_27__Bottleneck_1__Conv_cv2__SiLU_act__10328_swim_transpose_53, type = transpose} has been assigned to CPU.
+[UNILOG][INFO] Total device subgraph number 105, DPU subgraph number 52
+[UNILOG][INFO] Compile done.
+[UNILOG][INFO] The meta json is saved to "/workspace/yolov3_test/compiled/meta.json"
+[UNILOG][INFO] The compiled xmodel is saved to "/workspace/yolov3_test/compiled/yolov3_vck190.xmodel"
+[UNILOG][INFO] The compiled xmodel's md5sum is 067156a50e30d2d73f9a73956e38114e, and has been saved to "/workspace/yolov3_test/compiled/md5sum.txt"
+**************************************************
+* VITIS_AI Compilation - Xilinx Inc.
+**************************************************

@@ -1,0 +1,13 @@
+[UNILOG][INFO] Compile mode: dpu
+[UNILOG][INFO] Debug mode: null
+[UNILOG][INFO] Target architecture: DPUCVDX8G_ISA3_C32B6
+[UNILOG][INFO] Graph name: YOLOv3DPUWrapper, with op num: 562
+[UNILOG][INFO] Begin to compile...
+[UNILOG][INFO] Total device subgraph number 103, DPU subgraph number 50
+[UNILOG][INFO] Compile done.
+[UNILOG][INFO] The meta json is saved to "/workspace/yolov3_test/compiled_silu_decomp/meta.json"
+[UNILOG][INFO] The compiled xmodel is saved to "/workspace/yolov3_test/compiled_silu_decomp/yolov3_vck190_silu_decomp.xmodel"
+[UNILOG][INFO] The compiled xmodel's md5sum is ead360febff5edbdab863214a5954bab, and has been saved to "/workspace/yolov3_test/compiled_silu_decomp/md5sum.txt"
+**************************************************
+* VITIS_AI Compilation - Xilinx Inc.
+**************************************************
