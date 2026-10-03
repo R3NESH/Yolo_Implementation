@@ -56,6 +56,7 @@ Working notes for deploying **YOLOv3 onto an AMD Versal VCK190** via the Vitis A
 | Compiled for VCK190 | ✅ **all four** — 3.4 / 11.1 / 25.4 / 42.7 MB, each **1 DPU subgraph** (prior art: 2) |
 | What HardSwish costs | ✅ **~5× what quantization costs** — [[YOLOv8 Letterbox and the Activation Cost]] |
 | Board run | ✅ **All four on hardware** — 0.4453 / 0.5423 / 0.6001 / 0.6233 mAP@0.5, every one beating prior art — [[YOLOv8 on Hardware]] |
+| *(added)* LeakyReLU yolov8s | ✅ **On hardware, no activation swap** — 0.5104 mAP@0.5, **97.4% of its float score**, 1 DPU subgraph. Not stock v8s (lighter head). PDF report **not produced** — [[YOLOv8s LeakyReLU on Hardware]] |
 
 > [!note] The surprise, and its answer
 > YOLOv8 is *easier* on this DPU than YOLOv3. Swapping SiLU → HardSwish (which the DPU implements
@@ -110,6 +111,8 @@ Working notes for deploying **YOLOv3 onto an AMD Versal VCK190** via the Vitis A
 
 ### Findings
 - [[YOLOv8 on Hardware]] — ⭐⭐ **the headline: all four YOLOv8 models on the VCK190**
+- [[YOLOv8s LeakyReLU on Hardware]] — ⭐ a LeakyReLU-trained yolov8s on the board; keeps 97.4% of float, but below HardSwish s in absolute terms
+- [[Files Not in Git]] — ⭐ **nine files over 100 MB are not in the repo; how to recreate them**
 - [[YOLOv8 Prior Numbers Reconciled]] — ⭐ **the five contradictory v8 generations, settled offline**
 - [[YOLOv8 Letterbox and the Activation Cost]] — ⭐⭐ **the 2×2: HardSwish costs ~5× quantization; INT8 sim matches the board to 0.004**
 - [[YOLOv8 Anchor-Free Decode]] — ⭐ the DFL decode, verified against ultralytics before any board time

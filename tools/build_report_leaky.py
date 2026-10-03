@@ -592,10 +592,12 @@ def build():
         f"quantization citizen: it keeps {ret50}% of its float score rather than {hret50}%. "
         "Those two facts are compatible. The leaky model started from a lower float ceiling "
         f"({fl50:.3f} against {H['float_map50']:.3f}), and it lost proportionally less of it."))
-    A(p("<b>Recall is the leaky model's one lead.</b> AR@100 is "
-        f"{L['ar100']:.3f} against {H['ar100']:.3f}. It reaches that with a much lower operating "
-        f"confidence ({L['conf']:.2f} against {H['conf']:.2f}), so the two are not at "
-        "comparable thresholds, and precision there is lower."))
+    A(p("<b>Recall does not favour the leaky model either.</b> AR@100 is "
+        f"{L['ar100']:.3f} against {H['ar100']:.3f}, and recall at the best-F1 point is "
+        f"{L['recall']:.3f} against {H['recall']:.3f}. The leaky model reaches its optimum at a "
+        f"much lower confidence ({L['conf']:.2f} against {H['conf']:.2f}), so the two are not at "
+        "comparable thresholds; precision there is lower, "
+        f"{L['precision']:.3f} against {H['precision']:.3f}."))
     A(p("<b>Hardware cost is a wash on the DPU and worse on the host.</b> DPU-only throughput "
         f"is {L['fps_dpu']:.1f} against {H['fps_dpu']:.1f} images/s &mdash; the same within "
         "noise, despite 11% less arithmetic, because both fill the array equally and the DPU "
